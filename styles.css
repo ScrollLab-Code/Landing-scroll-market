@@ -52,18 +52,45 @@ h1, h2, h3, h4, .font-display {
   color: var(--text-primary);
 }
 
+/* ==========================================================================
+   MATTE UNIFIED ICONS
+   All icons default to warm matte stone/charcoal color (#44403c)
+   ========================================================================== */
+svg.lucide, i[data-lucide] {
+  color: #44403c !important;
+  stroke: #44403c !important;
+}
+
+/* Exceptions: Solid contrast buttons keep white icons */
+.btn-matte-primary svg.lucide,
+.btn-matte-rose svg.lucide,
+.btn-matte-forest svg.lucide,
+.btn-matte-primary i[data-lucide],
+.btn-matte-rose i[data-lucide],
+.btn-matte-forest i[data-lucide] {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Matte Icon Badges */
+.icon-box-matte {
+  background-color: #f4eee2;
+  border: 1px solid #e8e2d5;
+  color: #44403c;
+}
+
 /* Matte Cards with subtle, natural physical shadow */
 .card-matte {
   background-color: #ffffff;
   border: 1px solid var(--border-subtle);
-  border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(40, 35, 25, 0.04), 0 4px 12px rgba(40, 35, 25, 0.03);
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px rgba(40, 35, 25, 0.03), 0 3px 8px rgba(40, 35, 25, 0.02);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-matte:hover {
   border-color: var(--border-strong);
-  box-shadow: 0 4px 16px rgba(40, 35, 25, 0.07);
+  box-shadow: 0 4px 12px rgba(40, 35, 25, 0.05);
 }
 
 /* Matte Buttons */
@@ -111,27 +138,27 @@ h1, h2, h3, h4, .font-display {
 
 /* Matte Pill Badges */
 .badge-sage {
-  background-color: #e7f5ec;
-  border: 1px solid #c3e6cf;
-  color: #166534;
+  background-color: #f4eee2;
+  border: 1px solid #e8e2d5;
+  color: #44403c;
 }
 
 .badge-rose {
-  background-color: #fdf2f4;
-  border: 1px solid #fbcfe8;
-  color: #9f1239;
+  background-color: #f4eee2;
+  border: 1px solid #e8e2d5;
+  color: #44403c;
 }
 
 .badge-sky {
-  background-color: #e0f2fe;
-  border: 1px solid #bae6fd;
-  color: #0369a1;
+  background-color: #f4eee2;
+  border: 1px solid #e8e2d5;
+  color: #44403c;
 }
 
 .badge-warm {
-  background-color: #f3ede2;
-  border: 1px solid #dfd6c6;
-  color: #57534e;
+  background-color: #f4eee2;
+  border: 1px solid #e8e2d5;
+  color: #44403c;
 }
 
 /* Interactive Configurator Options */
@@ -139,7 +166,7 @@ h1, h2, h3, h4, .font-display {
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid var(--border-subtle);
-  border-radius: 0.875rem;
+  border-radius: 0.75rem;
   transition: all 0.15s ease;
 }
 
@@ -149,21 +176,21 @@ h1, h2, h3, h4, .font-display {
 }
 
 .config-option.selected {
-  border: 2px solid #be185d !important;
-  background-color: #fdf4f7 !important;
+  border: 2px solid #1c1917 !important;
+  background-color: #f4eee2 !important;
 }
 
 /* Large Demo Mockup Container */
 .demo-window-frame {
   background-color: #ffffff;
   border: 1px solid #dfd8cc;
-  box-shadow: 0 10px 30px -10px rgba(45, 38, 25, 0.12), 0 20px 40px -15px rgba(45, 38, 25, 0.08);
-  border-radius: 1.25rem;
+  box-shadow: 0 8px 24px -8px rgba(45, 38, 25, 0.08), 0 16px 32px -12px rgba(45, 38, 25, 0.05);
+  border-radius: 1rem;
 }
 
 /* Custom Scrollbar for warm aesthetic */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #f4eee2;

@@ -66,73 +66,67 @@
     </a>
   </div>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar: Compacta, limpia y sin amontonamientos -->
   <header class="sticky top-0 z-50 bg-[#faf8f5]/95 backdrop-blur-md border-b border-[#e8e2d5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       
-      <!-- Brand Logo Presentation -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-white border border-[#e8e2d5] p-1 flex items-center justify-center shadow-sm">
+      <!-- Brand Logo Presentation: Compacto y limpio -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="w-8 h-8 rounded-lg bg-white border border-[#e8e2d5] p-1 flex items-center justify-center shadow-sm">
           <img src="logo.png" alt="Scroll Market Logo" class="w-full h-full object-contain">
         </div>
-        <div class="leading-none">
-          <div class="font-display font-black text-xl tracking-tight flex items-center gap-1 text-[#1c1917]">
-            <span class="font-normal text-xs text-[#78716c] block">Software</span>
-            <span class="text-[#be185d]">Scroll</span>
-          </div>
-          <span class="font-display font-bold text-[11px] uppercase tracking-widest text-[#0369a1] block mt-0.5">Market</span>
+        <div class="leading-none flex items-baseline gap-1">
+          <span class="font-display font-black text-base tracking-tight text-[#1c1917]">Scroll<span class="text-[#be185d]">Market</span></span>
+          <span class="text-[9px] uppercase font-mono font-bold text-[#78716c] hidden sm:inline">POS</span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#57534e]">
-        <a href="#demo" class="text-[#166534] hover:text-[#14532d] transition-colors flex items-center gap-1.5 bg-[#e7f5ec] border border-[#c3e6cf] px-3 py-1 rounded-lg">
-          <span class="w-2 h-2 rounded-full bg-[#166534] animate-pulse"></span>
+      <!-- Desktop Nav: Texto en una sola línea, sin saltos -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-[13px] font-medium text-[#57534e]">
+        <a href="#demo" class="text-[#1c1917] hover:text-[#be185d] transition-colors flex items-center gap-1.5 bg-[#f4eee2] border border-[#e8e2d5] px-2.5 py-1 rounded-md font-semibold whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#166534] animate-pulse"></span>
           <span>Demo en Vivo</span>
         </a>
-        <a href="#funciones" class="hover:text-[#1c1917] transition-colors">Funciones Reales</a>
-        <a href="#planes" class="hover:text-[#1c1917] transition-colors">Planes y Combos</a>
-        <a href="#cotizador" class="hover:text-[#1c1917] transition-colors flex items-center gap-1">
-          <span>Cotizador</span>
-          <span class="px-1.5 py-0.2 rounded text-[10px] bg-[#f4eee2] text-[#78716c] font-mono">Personalizado</span>
-        </a>
-        <a href="#hardware" class="hover:text-[#1c1917] transition-colors">Lectores & Hardware</a>
-        <a href="#faq" class="hover:text-[#1c1917] transition-colors">Preguntas</a>
+        <a href="#funciones" class="hover:text-[#1c1917] transition-colors whitespace-nowrap">Funciones</a>
+        <a href="#planes" class="hover:text-[#1c1917] transition-colors whitespace-nowrap">Combos</a>
+        <a href="#cotizador" class="hover:text-[#1c1917] transition-colors whitespace-nowrap">Cotizador</a>
+        <a href="#hardware" class="hover:text-[#1c1917] transition-colors whitespace-nowrap">Hardware</a>
+        <a href="#faq" class="hover:text-[#1c1917] transition-colors whitespace-nowrap">Preguntas</a>
       </nav>
 
-      <!-- Desktop CTAs -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl btn-matte-secondary text-xs font-bold transition-all flex items-center gap-1.5">
-          <i data-lucide="play" class="w-3.5 h-3.5 text-[#0369a1]"></i>
+      <!-- Desktop CTAs: Compactos y proporcionados -->
+      <div class="hidden sm:flex items-center gap-2 shrink-0">
+        <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg btn-matte-secondary text-xs font-semibold transition-all flex items-center gap-1 whitespace-nowrap">
+          <i data-lucide="play" class="w-3 h-3"></i>
           <span>Abrir Demo</span>
         </a>
 
-        <a href="#planes" class="px-5 py-2.5 rounded-xl btn-matte-primary text-xs font-bold transition-all flex items-center gap-1.5">
+        <a href="#planes" class="px-3.5 py-1.5 rounded-lg btn-matte-primary text-xs font-semibold transition-all flex items-center gap-1 whitespace-nowrap">
           <span>Ver Combos</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl bg-white border border-[#e8e2d5] text-[#1c1917]">
-        <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+      <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-1.5 rounded-lg bg-white border border-[#e8e2d5] text-[#1c1917]">
+        <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
       </button>
     </div>
 
     <!-- Mobile Nav Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-[#e8e2d5] px-6 py-6 space-y-4">
-      <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between text-sm font-bold text-[#166534] bg-[#e7f5ec] border border-[#c3e6cf] p-3 rounded-xl">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-[#e8e2d5] px-5 py-4 space-y-3">
+      <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between text-xs font-bold text-[#1c1917] bg-[#f4eee2] border border-[#e8e2d5] p-2.5 rounded-lg">
         <span class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#166534] animate-pulse"></span>
           <span>Probar Demo Online en Vivo</span>
         </span>
-        <i data-lucide="external-link" class="w-4 h-4"></i>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
       </a>
-      <a href="#funciones" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Funciones del Software</a>
-      <a href="#planes" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Combos de Equipamiento</a>
-      <a href="#cotizador" class="mobile-nav-link block text-sm font-semibold text-[#be185d]">Cotizador a Medida</a>
-      <a href="#hardware" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Tipos de Lectores</a>
-      <a href="#faq" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Preguntas Frecuentes</a>
+      <a href="#funciones" class="mobile-nav-link block text-xs font-medium text-[#57534e]">Funciones del Software</a>
+      <a href="#planes" class="mobile-nav-link block text-xs font-medium text-[#57534e]">Combos de Equipamiento</a>
+      <a href="#cotizador" class="mobile-nav-link block text-xs font-medium text-[#be185d]">Cotizador a Medida</a>
+      <a href="#hardware" class="mobile-nav-link block text-xs font-medium text-[#57534e]">Tipos de Lectores</a>
+      <a href="#faq" class="mobile-nav-link block text-xs font-medium text-[#57534e]">Preguntas Frecuentes</a>
     </div>
   </header>
 
@@ -310,17 +304,17 @@
         </p>
       </div>
 
-      <!-- Grid de Funcionalidades Reales -->
+      <!-- Grid de Funcionalidades Reales: Iconos Matte Unificados -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         
         <!-- 1. POS & Atajos -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] border border-[#fbcfe8] text-[#be185d] flex items-center justify-center mb-4">
-              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="shopping-cart" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#be185d] mb-1">MÓDULO: VENTAS (F1)</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Punto de Venta Ultra Veloz</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: VENTAS (F1)</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Punto de Venta Ultra Veloz</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Escaneo continuo de códigos de barra sin necesidad de usar el mouse. Cobro rápido con teclado (F12) y cálculo de vuelto automático.
             </p>
@@ -330,11 +324,11 @@
         <!-- 2. Fiados y Cuenta Corriente -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#e7f5ec] border border-[#c3e6cf] text-[#166534] flex items-center justify-center mb-4">
-              <i data-lucide="users" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="users" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#166534] mb-1">MÓDULO: FIADOS</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Cuenta Corriente de Clientes</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: FIADOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Cuenta Corriente de Clientes</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Basta de libretas de almacén que se pierden. Anota compras fiadas por cliente, registra entregas parciales y controla el saldo deudor al instante.
             </p>
@@ -344,11 +338,11 @@
         <!-- 3. Caja Ciega y Turnos -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] border border-[#bae6fd] text-[#0369a1] flex items-center justify-center mb-4">
-              <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="dollar-sign" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#0369a1] mb-1">MÓDULO: CAJA Y TURNOS</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Arqueos & Control de Turnos</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: CAJA Y TURNOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Arqueos & Control de Turnos</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Apertura y cierre por empleado. Arqueo ciego discriminando efectivo, transferencias, tarjetas y QR (Mercado Pago). Retiros e ingresos de cambio.
             </p>
@@ -358,11 +352,11 @@
         <!-- 4. Facturación ARCA / AFIP -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#fef3c7] border border-[#fde68a] text-[#b45309] flex items-center justify-center mb-4">
-              <i data-lucide="file-text" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#b45309] mb-1">MÓDULO: FACTURACIÓN</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Comprobantes ARCA / AFIP</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: FACTURACIÓN</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Comprobantes ARCA / AFIP</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Emisión de Facturas Electrónicas oficiales A, B, C con código QR reglamentario, o tickets de venta no fiscal para control interno.
             </p>
@@ -372,11 +366,11 @@
         <!-- 5. Compras y Proveedores -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#f3ede2] border border-[#dcd3c3] text-[#57534e] flex items-center justify-center mb-4">
-              <i data-lucide="truck" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="truck" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#57534e] mb-1">MÓDULO: COMPRAS</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Proveedores & Reposición</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: COMPRAS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Proveedores & Reposición</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Carga tus facturas de compra a mayoristas. Actualiza costos de reposición y stock automáticamente para mantener tu margen de ganancia al día.
             </p>
@@ -386,11 +380,11 @@
         <!-- 6. Promociones y Combos -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] border border-[#fbcfe8] text-[#be185d] flex items-center justify-center mb-4">
-              <i data-lucide="tag" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="tag" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#be185d] mb-1">MÓDULO: PROMOS & COMBOS</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Combos Automáticos</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: PROMOS & COMBOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Combos Automáticos</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Crea ofertas tipo 2x1, descuentos por cantidad o combos (ej. Gaseosa + Papas) que el sistema aplica solo en la cuenta al escanear los artículos.
             </p>
@@ -400,11 +394,11 @@
         <!-- 7. Inventario y Excel -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] border border-[#bae6fd] text-[#0369a1] flex items-center justify-center mb-4">
-              <i data-lucide="package" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="package" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#0369a1] mb-1">MÓDULO: INVENTARIO</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Stock & Importación Excel</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: INVENTARIO</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Stock & Importación Excel</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Subí listas de precios masivas desde Excel en segundos. Avisos visuales de stock bajo para que nunca te falten los productos que más vendés.
             </p>
@@ -414,11 +408,11 @@
         <!-- 8. Ticketera & Gaveta -->
         <div class="card-matte p-5 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#e7f5ec] border border-[#c3e6cf] text-[#166534] flex items-center justify-center mb-4">
-              <i data-lucide="printer" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="printer" class="w-4 h-4"></i>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#166534] mb-1">MÓDULO: HARDWARE</div>
-            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Térmica & Gaveta Automática</h3>
+            <div class="text-[10px] font-mono font-bold text-[#78716c] uppercase mb-1">MÓDULO: HARDWARE</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-1.5">Térmica & Gaveta Automática</h3>
             <p class="text-xs text-[#57534e] leading-relaxed">
               Compatible con ticketeras térmicas de 58mm y 80mm sin cartuchos. Dispara el pulso de apertura de la gaveta metálica automáticamente al cobrar.
             </p>
@@ -861,7 +855,7 @@
               
               <label class="config-option p-3.5 flex items-center justify-between checkbox-option" data-addon="gaveta" data-name="Gaveta de Dinero Metálica con Apertura Automática">
                 <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-[#e7f5ec] text-[#166534] flex items-center justify-center">
+                  <div class="w-8 h-8 rounded-lg icon-box-matte flex items-center justify-center">
                     <i data-lucide="lock" class="w-4 h-4"></i>
                   </div>
                   <div>
@@ -869,12 +863,12 @@
                     <span class="text-[11px] text-[#78716c]">Se abre sola al emitir el ticket de cobro</span>
                   </div>
                 </div>
-                <input type="checkbox" class="w-4 h-4 accent-[#be185d] rounded cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 accent-[#1c1917] rounded cursor-pointer">
               </label>
 
               <label class="config-option p-3.5 flex items-center justify-between checkbox-option" data-addon="balanza" data-name="Módulo de Conexión para Balanza Electrónica">
                 <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-[#e0f2fe] text-[#0369a1] flex items-center justify-center">
+                  <div class="w-8 h-8 rounded-lg icon-box-matte flex items-center justify-center">
                     <i data-lucide="scale" class="w-4 h-4"></i>
                   </div>
                   <div>
@@ -882,7 +876,7 @@
                     <span class="text-[11px] text-[#78716c]">Pesaje directo en caja de frutas, fiambre o granel</span>
                   </div>
                 </div>
-                <input type="checkbox" class="w-4 h-4 accent-[#be185d] rounded cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 accent-[#1c1917] rounded cursor-pointer">
               </label>
 
             </div>
@@ -900,8 +894,8 @@
                 <span class="text-[10px] uppercase tracking-wider text-[#78716c] font-mono font-bold block">Resumen del Combo</span>
                 <h4 class="font-display text-lg font-black text-[#1c1917]">Scroll Market a Medida</h4>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-[#e7f5ec] text-[#166534] flex items-center justify-center">
-                <i data-lucide="check" class="w-5 h-5"></i>
+              <div class="w-8 h-8 rounded-lg icon-box-matte flex items-center justify-center">
+                <i data-lucide="check" class="w-4 h-4"></i>
               </div>
             </div>
 
@@ -1002,10 +996,10 @@
         
         <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] text-[#0369a1] flex items-center justify-center mb-4">
-              <i data-lucide="scan-barcode" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="scan-barcode" class="w-4 h-4"></i>
             </div>
-            <span class="badge-sky px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
+            <span class="badge-warm px-2 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
               Lector de Mesa (Fijo 360°)
             </span>
             <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Manos Libres Omnidireccional</h3>
@@ -1014,15 +1008,15 @@
             </p>
             <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Máxima velocidad en supermercados y almacenes</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Soporta códigos 1D (EAN13) y 2D (QR)</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Cero fatiga en la muñeca del cajero</span>
               </li>
             </ul>
@@ -1034,10 +1028,10 @@
 
         <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] text-[#be185d] flex items-center justify-center mb-4">
-              <i data-lucide="wifi" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="wifi" class="w-4 h-4"></i>
             </div>
-            <span class="badge-rose px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
+            <span class="badge-warm px-2 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
               Lector Móvil Inalámbrico
             </span>
             <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Libertad Total de Movimiento</h3>
@@ -1046,15 +1040,15 @@
             </p>
             <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Alcance de hasta 30-50 metros sin cables</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Modo inventario para escanear en depósito</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Batería recargable para toda la jornada</span>
               </li>
             </ul>
@@ -1064,12 +1058,12 @@
           </div>
         </div>
 
-        <div class="card-matte p-6 flex flex-col justify-between bg-white border-2 border-[#1c1917]">
+        <div class="card-matte p-6 flex flex-col justify-between bg-white border border-[#1c1917]">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#f4eee2] text-[#1c1917] flex items-center justify-center mb-4">
-              <i data-lucide="layers" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg icon-box-matte flex items-center justify-center mb-3">
+              <i data-lucide="layers" class="w-4 h-4"></i>
             </div>
-            <span class="badge-warm px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
+            <span class="badge-warm px-2 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
               Configuración Completa
             </span>
             <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Los Dos Lectores a la Vez</h3>
@@ -1078,20 +1072,20 @@
             </p>
             <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Lector de mesa para artículos cotidianos</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Lector móvil para escanear cajas pesadas</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#57534e]"></i>
                 <span>Cero cuellos de botella en horas pico</span>
               </li>
             </ul>
           </div>
-          <div class="mt-6 pt-4 border-t border-[#e8e2d5] text-xs text-[#be185d] font-bold">
+          <div class="mt-6 pt-4 border-t border-[#e8e2d5] text-xs text-[#1c1917] font-semibold">
             ¡Disponible en el cotizador con precio especial!
           </div>
         </div>

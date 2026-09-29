@@ -1,6 +1,6 @@
 /**
  * Scroll Market Landing Page Interactivity
- * Professional Front-end Application logic
+ * Matte & Warm Cream Front-end Logic
  */
 
 // Configuration object - Central place to customize contact data
@@ -57,7 +57,7 @@ function initConfigurator() {
 
   // State object matching "Licencia de Por Vida con 14 días de prueba gratis"
   const state = {
-    software: "Software Scroll Market: Licencia de Por Vida (Pago Único) + 14 días de prueba gratis",
+    software: "Software Scroll Market: Licencia de Por Vida (Pago Único) + 14 días de prueba",
     printer: "Impresora Térmica 80mm c/ Corte Automático",
     scanner: "Lector de Mesa Fijo Omnidireccional 2D (Escaneo 360°)",
     pc: "Sin PC (Uso mi propia Computadora o Notebook)",
@@ -72,8 +72,8 @@ function initConfigurator() {
       const icon = el.querySelector(".check-indicator");
       if (icon) {
         icon.setAttribute("data-lucide", "circle");
-        icon.classList.remove("text-rose-400");
-        icon.classList.add("text-slate-600");
+        icon.classList.remove("text-[#be185d]");
+        icon.classList.add("text-[#a8a29e]");
       }
     });
 
@@ -82,8 +82,8 @@ function initConfigurator() {
     const activeIcon = selectedElement.querySelector(".check-indicator");
     if (activeIcon) {
       activeIcon.setAttribute("data-lucide", "check-circle-2");
-      activeIcon.classList.remove("text-slate-600");
-      activeIcon.classList.add("text-rose-400");
+      activeIcon.classList.remove("text-[#a8a29e]");
+      activeIcon.classList.add("text-[#be185d]");
     }
 
     if (window.lucide) {
@@ -119,12 +119,12 @@ function initConfigurator() {
       const addonName = chkWrapper.getAttribute("data-name");
 
       if (checkbox.checked) {
-        chkWrapper.classList.add("border-rose-500/60", "bg-rose-500/10");
+        chkWrapper.classList.add("border-[#be185d]", "bg-[#fdf2f4]");
         if (!state.addons.includes(addonName)) {
           state.addons.push(addonName);
         }
       } else {
-        chkWrapper.classList.remove("border-rose-500/60", "bg-rose-500/10");
+        chkWrapper.classList.remove("border-[#be185d]", "bg-[#fdf2f4]");
         state.addons = state.addons.filter((item) => item !== addonName);
       }
 

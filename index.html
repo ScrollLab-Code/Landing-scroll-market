@@ -3,35 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Market | Software Punto de Venta & Hardware para Comercios</title>
-  <meta name="description" content="Software Punto de Venta (POS) con Licencia de Por Vida y 14 días de prueba gratis. Combos completos con impresoras térmicas, lectores de barra de mesa/móviles y computadoras.">
+  <title>Scroll Market | Sistema de Punto de Venta & Hardware para Comercios</title>
+  <meta name="description" content="Software POS para kioscos, almacenes y comercios. Licencia de por vida, 14 días de prueba gratis. Combos completos con impresoras térmicas, lectores y computadoras.">
   
-  <!-- Favicon using brand logo -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png">
 
-  <!-- Google Fonts: Outfit (Brand Display) & Plus Jakarta Sans / JetBrains Mono -->
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            brand: {
-              rose: '#e11d48',
-              magenta: '#db2777',
-              pink: '#fb7185',
-              cyan: '#0284c7',
-              cyanLight: '#38bdf8',
-              dark: '#08090d',
-              surface: '#0f121a',
-              card: '#141824',
-              border: '#1f2436',
+            cream: {
+              50: '#fdfbf9',
+              100: '#faf8f5',
+              200: '#f4eee2',
+              300: '#e8e2d5',
+              400: '#d8d0c0',
+            },
+            matte: {
+              charcoal: '#1c1917',
+              berry: '#9f1239',
+              rose: '#be185d',
+              ocean: '#0369a1',
+              sage: '#166534',
             }
           },
           fontFamily: {
@@ -49,596 +51,599 @@
   
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#08090d] text-slate-100 antialiased font-sans selection:bg-rose-500 selection:text-white relative overflow-x-hidden">
+<body class="bg-[#faf8f5] text-[#1c1917] antialiased font-sans selection:bg-[#be185d] selection:text-white">
 
-  <!-- Atmospheric Background Glow Elements aligned with logo colors -->
-  <div class="fixed top-0 left-1/4 -translate-x-1/2 w-[600px] h-[500px] ambient-glow-rose pointer-events-none -z-10 blur-3xl"></div>
-  <div class="fixed top-20 right-10 w-[550px] h-[500px] ambient-glow-cyan pointer-events-none -z-10 blur-3xl"></div>
-
-  <!-- Announcement Bar: 14 DÍAS DE PRUEBA GRATIS + LICENCIA DE POR VIDA -->
-  <div class="bg-gradient-to-r from-rose-950/90 via-slate-900 to-sky-950/90 border-b border-rose-500/20 py-2.5 px-4 text-xs font-medium text-center flex items-center justify-center gap-2 sm:gap-3">
-    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30 text-[11px]">
-      <i data-lucide="gift" class="w-3.5 h-3.5 text-rose-400"></i> PRUEBA 14 DÍAS GRATIS
+  <!-- Top Announcement Bar: Warm Matte -->
+  <div class="bg-[#f4eee2] border-b border-[#e8e2d5] py-2 px-4 text-xs font-medium text-center text-[#44403c] flex items-center justify-center gap-2 sm:gap-3">
+    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full badge-rose font-bold text-[11px]">
+      <i data-lucide="gift" class="w-3.5 h-3.5 text-[#9f1239]"></i> PRUEBA 14 DÍAS GRATIS
     </span>
-    <span class="text-slate-200">
-      Licencia de por vida <strong>sin pagos mensuales forzados</strong>. ¡Instálalo y pruébalo en tu local!
+    <span>
+      Licencia definitiva de por vida • <strong>Sin pagos mensuales forzados</strong>.
     </span>
-    <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20solicitar%20mis%2014%20d%C3%ADas%20de%20prueba%20gratis%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 font-bold underline hidden md:inline ml-1">
-      Comenzar prueba &rarr;
+    <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="text-[#9f1239] hover:underline font-bold hidden sm:inline ml-1">
+      Probar demo en vivo &rarr;
     </a>
   </div>
 
   <!-- Navigation Bar -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#08090d]/85 border-b border-white/[0.06] transition-all">
+  <header class="sticky top-0 z-50 bg-[#faf8f5]/95 backdrop-blur-md border-b border-[#e8e2d5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo Presentation -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-lg shadow-black/60 group-hover:scale-105 transition-transform duration-300">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-white border border-[#e8e2d5] p-1 flex items-center justify-center shadow-sm">
           <img src="logo.png" alt="Scroll Market Logo" class="w-full h-full object-contain">
         </div>
         <div class="leading-none">
-          <div class="font-display font-extrabold text-xl tracking-tight flex items-center gap-1.5 text-white">
-            <span class="font-light text-slate-300 text-sm block">Software</span>
-            <span class="text-gradient-scroll">Scroll</span>
+          <div class="font-display font-black text-xl tracking-tight flex items-center gap-1 text-[#1c1917]">
+            <span class="font-normal text-xs text-[#78716c] block">Software</span>
+            <span class="text-[#be185d]">Scroll</span>
           </div>
-          <span class="font-display font-bold text-xs uppercase tracking-widest text-gradient-market block mt-0.5">Market</span>
+          <span class="font-display font-bold text-[11px] uppercase tracking-widest text-[#0369a1] block mt-0.5">Market</span>
         </div>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-semibold bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-lg">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#57534e]">
+        <a href="#demo" class="text-[#166534] hover:text-[#14532d] transition-colors flex items-center gap-1.5 bg-[#e7f5ec] border border-[#c3e6cf] px-3 py-1 rounded-lg">
+          <span class="w-2 h-2 rounded-full bg-[#166534] animate-pulse"></span>
           <span>Demo en Vivo</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5 text-emerald-400"></i>
         </a>
-        <a href="#beneficios" class="hover:text-white transition-colors">Sistema POS</a>
-        <a href="#planes" class="hover:text-white transition-colors">Combos & Precios</a>
-        <a href="#cotizador" class="hover:text-white transition-colors flex items-center gap-1.5">
-          <span>Cotizador a Medida</span>
-          <span class="px-1.5 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold uppercase">Interactivo</span>
+        <a href="#funciones" class="hover:text-[#1c1917] transition-colors">Funciones Reales</a>
+        <a href="#planes" class="hover:text-[#1c1917] transition-colors">Planes y Combos</a>
+        <a href="#cotizador" class="hover:text-[#1c1917] transition-colors flex items-center gap-1">
+          <span>Cotizador</span>
+          <span class="px-1.5 py-0.2 rounded text-[10px] bg-[#f4eee2] text-[#78716c] font-mono">Personalizado</span>
         </a>
-        <a href="#hardware" class="hover:text-white transition-colors">Tipos de Lectores</a>
-        <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+        <a href="#hardware" class="hover:text-[#1c1917] transition-colors">Lectores & Hardware</a>
+        <a href="#faq" class="hover:text-[#1c1917] transition-colors">Preguntas</a>
       </nav>
 
-      <!-- Desktop Action CTAs -->
+      <!-- Desktop CTAs -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20activar%20mi%20prueba%20gratuita%20de%2014%20d%C3%ADas%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl border border-white/10 hover:border-rose-500/50 bg-white/[0.03] hover:bg-rose-500/10 text-xs font-bold text-slate-200 hover:text-white transition-all flex items-center gap-2">
-          <i data-lucide="sparkles" class="w-4 h-4 text-rose-400"></i>
-          <span>Prueba 14 Días Gratis</span>
+        <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl btn-matte-secondary text-xs font-bold transition-all flex items-center gap-1.5">
+          <i data-lucide="play" class="w-3.5 h-3.5 text-[#0369a1]"></i>
+          <span>Abrir Demo</span>
         </a>
 
-        <a href="#planes" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 via-rose-500 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-xs font-bold text-white shadow-lg shadow-rose-600/30 transition-all flex items-center gap-2">
+        <a href="#planes" class="px-5 py-2.5 rounded-xl btn-matte-primary text-xs font-bold transition-all flex items-center gap-1.5">
           <span>Ver Combos</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
-      <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl bg-white border border-[#e8e2d5] text-[#1c1917]">
         <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
       </button>
     </div>
 
     <!-- Mobile Nav Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#0a0d14] border-b border-slate-800/80 px-6 py-6 space-y-4">
-      <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 p-2.5 rounded-xl">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-[#e8e2d5] px-6 py-6 space-y-4">
+      <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center justify-between text-sm font-bold text-[#166534] bg-[#e7f5ec] border border-[#c3e6cf] p-3 rounded-xl">
         <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Probar Demo en Vivo (Online)</span>
+          <span class="w-2 h-2 rounded-full bg-[#166534] animate-pulse"></span>
+          <span>Probar Demo Online en Vivo</span>
         </span>
         <i data-lucide="external-link" class="w-4 h-4"></i>
       </a>
-      <a href="#beneficios" class="mobile-nav-link block text-sm font-semibold text-slate-300 hover:text-white">Características del Sistema</a>
-      <a href="#planes" class="mobile-nav-link block text-sm font-semibold text-slate-300 hover:text-white">Planes y Combos de Equipamiento</a>
-      <a href="#cotizador" class="mobile-nav-link block text-sm font-semibold text-rose-400 hover:text-white">Cotizador a Medida</a>
-      <a href="#hardware" class="mobile-nav-link block text-sm font-semibold text-slate-300 hover:text-white">Comparativa de Lectores</a>
-      <a href="#faq" class="mobile-nav-link block text-sm font-semibold text-slate-300 hover:text-white">Preguntas Frecuentes</a>
-      <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-3">
-        <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20solicitar%20mis%2014%20d%C3%ADas%20de%20prueba%20gratis" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 bg-gradient-to-r from-rose-600 to-pink-600 rounded-xl font-bold text-xs text-white shadow-lg shadow-rose-600/30">
-          Probar 14 Días Gratis Sin Compromiso
-        </a>
-      </div>
+      <a href="#funciones" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Funciones del Software</a>
+      <a href="#planes" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Combos de Equipamiento</a>
+      <a href="#cotizador" class="mobile-nav-link block text-sm font-semibold text-[#be185d]">Cotizador a Medida</a>
+      <a href="#hardware" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Tipos de Lectores</a>
+      <a href="#faq" class="mobile-nav-link block text-sm font-semibold text-[#57534e]">Preguntas Frecuentes</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="pt-12 pb-16 md:pt-16 md:pb-20 border-b border-[#e8e2d5]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
       
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Left: Headline & Strategic Copy -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <!-- Key Selling Point Badges -->
-          <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
-            <span class="px-3 py-1 rounded-full badge-pill-rose text-xs font-bold tracking-wide uppercase flex items-center gap-1.5">
-              <i data-lucide="infinity" class="w-3.5 h-3.5 text-rose-400"></i> Licencia de Por Vida
-            </span>
-            <span class="px-3 py-1 rounded-full badge-pill-cyan text-xs font-bold tracking-wide uppercase flex items-center gap-1.5">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5 text-sky-400"></i> 14 Días de Prueba Gratis
-            </span>
-          </div>
-
-          <!-- Main Title -->
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight">
-            Toma el control total de tu comercio con <br class="hidden sm:inline" />
-            <span class="text-gradient-scroll">Scroll</span>
-            <span class="text-gradient-market">Market</span>
-          </h1>
-
-          <!-- Value Proposition -->
-          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Olvídate de las cuotas mensuales para siempre. Adquiere tu <strong>licencia definitiva</strong> de software con cobro ultra rápido, stock en tiempo real y arqueo de caja.
-            Llévalo solo o en <strong>combos completos con impresora térmica, lectores de barra (de mesa o móvil) y computadora configurada</strong>.
-          </p>
-
-          <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-            <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20activar%20mis%2014%20d%C3%ADas%20de%20prueba%20gratis%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-rose-600 via-rose-500 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-sm shadow-xl shadow-rose-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-              <span>Probar 14 Días Gratis</span>
-            </a>
-            
-            <a href="#planes" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2">
-              <i data-lucide="layers" class="w-4 h-4 text-sky-400"></i>
-              <span>Ver Planes & Combos</span>
-            </a>
-          </div>
-
-          <div class="flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400 pt-1">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>¿Querés probarlo ahora mismo?</span>
-            <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-bold underline flex items-center gap-1">
-              <span>Abrir Demo en Vivo</span>
-              <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-
-          <!-- Trust Proof Metrics -->
-          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/[0.08] text-center lg:text-left">
-            <div>
-              <div class="font-display font-extrabold text-xl sm:text-2xl text-white">Pago Único</div>
-              <div class="text-xs text-slate-400 font-medium">Sin abonos mensuales obligatorios</div>
-            </div>
-            <div>
-              <div class="font-display font-extrabold text-xl sm:text-2xl text-rose-400">14 Días</div>
-              <div class="text-xs text-slate-400 font-medium">De prueba en tu propio local</div>
-            </div>
-            <div>
-              <div class="font-display font-extrabold text-xl sm:text-2xl text-sky-400">100% Plug & Play</div>
-              <div class="text-xs text-slate-400 font-medium">Equipos probados y garantizados</div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right: Live Interactive Demo Miniature Preview -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-lg lg:max-w-none">
-            
-            <!-- Browser Mockup Window Container -->
-            <div class="card-glass rounded-2xl border border-white/[0.12] shadow-2xl shadow-black/80 overflow-hidden relative group">
-              
-              <!-- Browser Window Header Bar -->
-              <div class="bg-[#0c0f17] px-4 py-3 border-b border-white/[0.08] flex items-center justify-between gap-2">
-                <!-- Window action dots -->
-                <div class="flex items-center gap-1.5 shrink-0">
-                  <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                </div>
-
-                <!-- URL bar with padlock & live indicator -->
-                <div class="flex-1 max-w-xs mx-auto bg-black/50 border border-white/[0.08] rounded-lg px-2.5 py-1 flex items-center justify-center gap-1.5 text-[11px] text-slate-300 font-mono overflow-hidden">
-                  <i data-lucide="lock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
-                  <span class="truncate text-slate-300 text-[10px] sm:text-xs">scroll-market-production.up.railway.app</span>
-                </div>
-
-                <!-- Open full window link -->
-                <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="shrink-0 text-slate-400 hover:text-white p-1 rounded hover:bg-white/[0.06] transition-colors" title="Abrir demo en pantalla completa">
-                  <i data-lucide="external-link" class="w-4 h-4 text-sky-400"></i>
-                </a>
-              </div>
-
-              <!-- Top Status Bar in miniature -->
-              <div class="bg-gradient-to-r from-emerald-950/40 via-slate-900 to-sky-950/40 border-b border-white/[0.05] px-3.5 py-1.5 flex items-center justify-between text-[11px]">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span class="font-bold text-emerald-400 text-xs">DEMO EN VIVO</span>
-                  <span class="text-slate-500">•</span>
-                  <span class="text-slate-400 text-[10px]">Miniatura interactiva</span>
-                </div>
-                <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold text-sky-400 hover:text-sky-300 hover:underline flex items-center gap-1">
-                  <span>Pantalla Completa</span>
-                  <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Miniature Iframe Container -->
-              <div class="relative w-full h-[480px] sm:h-[530px] bg-[#fdfbf7] overflow-hidden">
-                <iframe 
-                  id="heroDemoFrame"
-                  src="https://scroll-market-production.up.railway.app" 
-                  class="w-full h-full border-0 select-auto"
-                  title="Demo en vivo Scroll Market POS"
-                  loading="eager"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
-                </iframe>
-              </div>
-
-              <!-- Bottom Bar inside Mockup -->
-              <div class="bg-[#0c0f17] border-t border-white/[0.08] px-4 py-2.5 flex items-center justify-between text-[11px] text-slate-400">
-                <span class="flex items-center gap-1.5 font-mono text-[11px]">
-                  <i data-lucide="mouse-pointer" class="w-3.5 h-3.5 text-rose-400 animate-bounce"></i>
-                  <span>Haz clic dentro para interactuar con la caja</span>
-                </span>
-                <button onclick="document.getElementById('heroDemoFrame').src='https://scroll-market-production.up.railway.app'" class="text-[10px] text-slate-400 hover:text-white flex items-center gap-1 font-mono transition-colors">
-                  <i data-lucide="rotate-cw" class="w-3 h-3"></i> Reiniciar
-                </button>
-              </div>
-
-            </div>
-
-            <!-- Floating Badge: Prueba Gratuita 14 Días -->
-            <div class="absolute -bottom-4 -left-4 bg-[#0e121b]/95 border border-rose-500/40 p-3 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2.5 max-w-[260px] z-10">
-              <div class="w-9 h-9 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
-                <i data-lucide="gift" class="w-4 h-4"></i>
-              </div>
-              <div class="text-xs">
-                <span class="font-bold text-white block">14 Días Gratis</span>
-                <span class="text-slate-400 text-[10px]">Instálalo en tu local sin costo.</span>
-              </div>
-            </div>
-
-            <!-- Floating Badge: Servidor Activo -->
-            <div class="absolute -top-3 -right-3 bg-[#0e121b]/95 border border-emerald-500/40 px-3 py-1.5 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-1.5 z-10">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-xs font-bold text-emerald-400">En Línea 24/7</span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Segmentos de Negocio -->
-  <section class="py-10 border-y border-white/[0.06] bg-[#0b0e17]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
-        Potencia comercios de todos los rubros en todo el país
-      </p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-rose-500/30 transition-colors">
-          <i data-lucide="store" class="w-5 h-5 text-rose-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Minimarkets</span>
-        </div>
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-sky-500/30 transition-colors">
-          <i data-lucide="coffee" class="w-5 h-5 text-sky-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Kioscos & Drugstores</span>
-        </div>
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-amber-500/30 transition-colors">
-          <i data-lucide="hammer" class="w-5 h-5 text-amber-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Ferreterías</span>
-        </div>
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-emerald-500/30 transition-colors">
-          <i data-lucide="dog" class="w-5 h-5 text-emerald-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Pet Shops</span>
-        </div>
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-pink-500/30 transition-colors">
-          <i data-lucide="shirt" class="w-5 h-5 text-pink-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Indumentaria</span>
-        </div>
-        <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-purple-500/30 transition-colors">
-          <i data-lucide="boxes" class="w-5 h-5 text-purple-400 mx-auto mb-2"></i>
-          <span class="text-xs font-bold text-slate-200 block">Mayoristas & Bazares</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beneficios del Sistema POS -->
-  <section id="beneficios" class="py-20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-gradient-scroll">Diseñado para Mostrador Real</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Velocidad absoluta sin complicaciones
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Scroll Market elimina las esperas en la caja, evita pérdidas de dinero en turnos y te brinda tranquilidad con una base local estable.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
-            <i data-lucide="zap" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Cobro Instantáneo por Código de Barras</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Escanea sin demoras con cualquier lector USB, inalámbrico o de mesa 360°. Acceso rápido con teclado para productos por peso o sin código.
-          </p>
-        </div>
-
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
-            <i data-lucide="package" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Control de Stock e Inventario</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Descuento automático por cada venta, avisos de stock mínimo para reponer mercadería a tiempo e importación masiva rápida desde Excel.
-          </p>
-        </div>
-
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-            <i data-lucide="wallet" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Arqueos de Caja Ciega y Turnos</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Control exacto al cierre de turno: discrimina efectivo, tarjetas, transferencias y pagos con QR (Mercado Pago). El cajero no ve el total esperado.
-          </p>
-        </div>
-
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4">
-            <i data-lucide="file-check" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Tickets y Facturación Oficial</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Emite tickets rápidos en impresoras térmicas de 58mm u 80mm con tu logo y datos, además de facturación electrónica con QR reglamentario.
-          </p>
-        </div>
-
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-            <i data-lucide="wifi-off" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Funciona 100% Sin Internet</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Si se corta internet en el local, tu mostrador sigue vendiendo y facturando con total normalidad. Tu negocio nunca se paraliza.
-          </p>
-        </div>
-
-        <div class="card-glass rounded-2xl p-6">
-          <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
-            <i data-lucide="sparkles" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Licencia de Por Vida (Sin Cuotas)</h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Una sola inversión para siempre. Olvídate de los sistemas que te cobran mensualidades eternas que suben todos los meses.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Planes y Combos de Equipamiento (El núcleo solicitado) -->
-  <section id="planes" class="py-20 bg-[#0a0d14] border-t border-white/[0.06] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="px-3.5 py-1 rounded-full badge-pill-rose text-xs font-bold uppercase tracking-wider">
-          Opciones Claras & Transparentes
+      <!-- Badges -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-2">
+        <span class="px-3 py-1 rounded-full badge-rose text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <i data-lucide="infinity" class="w-3.5 h-3.5"></i> Licencia de Por Vida (Pago Único)
         </span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-          Nuestros Planes y Combos de Hardware
+        <span class="px-3 py-1 rounded-full badge-sage text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> 14 Días de Prueba Gratis
+        </span>
+        <span class="px-3 py-1 rounded-full badge-sky text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <i data-lucide="wifi-off" class="w-3.5 h-3.5"></i> 100% Offline (Sin depender de Internet)
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-[#1c1917] leading-[1.1] tracking-tight">
+        El sistema de punto de venta rápido y confiable para tu mostrador.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-lg text-[#57534e] max-w-3xl mx-auto leading-relaxed">
+        Diseñado para kioscos, minimarkets y almacenes. Facturación oficial ARCA/AFIP, control de stock, caja ciega y libreta de fiados.
+        <strong>Comprá el software solo o en combos con impresora térmica, lectores de mesa/móviles y computadora configurada.</strong>
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="#demo" class="w-full sm:w-auto px-8 py-3.5 rounded-xl btn-matte-rose text-sm font-bold flex items-center justify-center gap-2 shadow-sm">
+          <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+          <span>Probar Demo Interactiva Abajo</span>
+        </a>
+        
+        <a href="#planes" class="w-full sm:w-auto px-7 py-3.5 rounded-xl btn-matte-secondary text-sm font-bold flex items-center justify-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4 text-[#57534e]"></i>
+          <span>Ver Combos y Equipamiento</span>
+        </a>
+        
+        <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20activar%20mis%2014%20d%C3%ADas%20de%20prueba%20gratis%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl btn-matte-forest text-sm font-bold flex items-center justify-center gap-2 shadow-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Pedir Prueba Gratis</span>
+        </a>
+      </div>
+
+      <!-- Value Props Metrics -->
+      <div class="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-[#e8e2d5] text-left">
+        <div class="p-3 bg-white rounded-xl border border-[#e8e2d5]">
+          <div class="font-display font-extrabold text-lg text-[#1c1917]">Cero Cuotas</div>
+          <div class="text-xs text-[#78716c]">El software es tuyo para siempre</div>
+        </div>
+        <div class="p-3 bg-white rounded-xl border border-[#e8e2d5]">
+          <div class="font-display font-extrabold text-lg text-[#9f1239]">14 Días Gratis</div>
+          <div class="text-xs text-[#78716c]">Pruébalo en tu local sin tarjeta</div>
+        </div>
+        <div class="p-3 bg-white rounded-xl border border-[#e8e2d5]">
+          <div class="font-display font-extrabold text-lg text-[#0369a1]">ARCA / AFIP</div>
+          <div class="text-xs text-[#78716c]">Facturas A, B, C y tickets</div>
+        </div>
+        <div class="p-3 bg-white rounded-xl border border-[#e8e2d5]">
+          <div class="font-display font-extrabold text-lg text-[#166534]">Plug & Play</div>
+          <div class="text-xs text-[#78716c]">Hardware probado y listo</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DEMO EN VIVO GIGANTE (Requested: "la demo hacela mas grande") -->
+  <section id="demo" class="py-16 bg-[#f4eee2] border-b border-[#e8e2d5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-8 space-y-2">
+        <span class="badge-sage px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-[#166534] animate-pulse"></span> DEMO EN VIVO ONLINE
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917] tracking-tight">
+          Pruébalo ahora mismo: la aplicación real funcionando
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Todos los planes incluyen <strong>14 días de prueba gratis</strong> y <strong>licencia de software de por vida</strong>. Elige el equipamiento según lo que ya tengas en tu local.
+        <p class="text-[#57534e] text-sm sm:text-base">
+          Esta es la versión exacta del sistema en producción. Puedes buscar productos, cargar ítems a la cuenta, abrir la caja o revisar el inventario.
         </p>
       </div>
 
-      <!-- Grid de 4 Combos -->
+      <!-- Large Interactive Browser Container (Mucho más grande) -->
+      <div class="max-w-6xl mx-auto demo-window-frame overflow-hidden">
+        
+        <!-- Browser Header Bar -->
+        <div class="bg-[#faf8f5] px-4 py-3 border-b border-[#dfd8cc] flex flex-wrap items-center justify-between gap-3">
+          
+          <!-- Window Dots & Title -->
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#f43f5e] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#f59e0b] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#10b981] inline-block"></span>
+            <span class="text-xs font-mono text-[#78716c] ml-2 hidden sm:inline font-bold">Scroll Market POS — Terminal de Mostrador</span>
+          </div>
+
+          <!-- URL Bar with Padlock -->
+          <div class="flex items-center gap-2 bg-white border border-[#dfd8cc] px-3 py-1 rounded-lg text-xs font-mono text-[#44403c] shadow-sm">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-[#166534]"></i>
+            <span>scroll-market-production.up.railway.app</span>
+          </div>
+
+          <!-- Action buttons for the demo -->
+          <div class="flex items-center gap-2">
+            <button onclick="document.getElementById('largeDemoFrame').src='https://scroll-market-production.up.railway.app'" class="text-xs text-[#57534e] hover:text-[#1c1917] px-2.5 py-1 rounded border border-[#dfd8cc] bg-white flex items-center gap-1 font-semibold transition-colors">
+              <i data-lucide="rotate-cw" class="w-3 h-3"></i>
+              <span>Reiniciar</span>
+            </button>
+            <a href="https://scroll-market-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="text-xs btn-matte-primary px-3 py-1 rounded font-bold flex items-center gap-1">
+              <span>Pantalla Completa</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hint bar -->
+        <div class="bg-white border-b border-[#e8e2d5] px-4 py-2 flex flex-wrap items-center justify-between text-xs text-[#57534e]">
+          <div class="flex items-center gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-[#0369a1]"></i>
+            <span><strong>Cómo probar:</strong> Haz clic en los botones superiores (Ventas F1, Caja, Compras, Inventario, Fiados) para navegar por todo el software.</span>
+          </div>
+          <span class="font-mono text-[11px] text-[#78716c] hidden md:inline">Servidor: Railway Hikari • Latencia: &lt;50ms</span>
+        </div>
+
+        <!-- Huge Iframe Viewport: 680px on desktop, 480px on mobile -->
+        <div class="w-full h-[520px] sm:h-[680px] bg-[#fdfbf7] relative">
+          <iframe 
+            id="largeDemoFrame"
+            src="https://scroll-market-production.up.railway.app" 
+            class="w-full h-full border-0"
+            title="Scroll Market Live Demo POS"
+            loading="eager"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+          </iframe>
+        </div>
+
+        <!-- Bottom instruction bar -->
+        <div class="bg-[#faf8f5] px-4 py-3 border-t border-[#dfd8cc] flex flex-wrap items-center justify-between gap-3 text-xs text-[#57534e]">
+          <div class="flex items-center gap-2 font-medium">
+            <i data-lucide="sparkles" class="w-4 h-4 text-[#9f1239]"></i>
+            <span>¿Te gustó la velocidad? Te lo dejamos instalado en tu PC en menos de 15 minutos.</span>
+          </div>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Prob%C3%A9%20la%20demo%20de%20Scroll%20Market%20y%20quiero%20activar%20mis%2014%20d%C3%ADas%20de%20prueba" target="_blank" rel="noopener noreferrer" class="btn-matte-rose px-4 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1.5">
+            <span>Pedir 14 Días de Prueba Gratis</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FUNCIONES REALES DEL SOFTWARE (Extraídas directamente del código de Scroll Market) -->
+  <section id="funciones" class="py-20 border-b border-[#e8e2d5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+        <span class="badge-rose px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+          Capacidades Reales de la Plataforma
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917] tracking-tight">
+          Todo lo que incluye Scroll Market en tu local
+        </h2>
+        <p class="text-[#57534e] text-sm sm:text-base">
+          Módulos desarrollados específicamente para agilizar la atención al público y blindar el dinero de tu caja.
+        </p>
+      </div>
+
+      <!-- Grid de Funcionalidades Reales -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- 1. POS & Atajos -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] border border-[#fbcfe8] text-[#be185d] flex items-center justify-center mb-4">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#be185d] mb-1">MÓDULO: VENTAS (F1)</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Punto de Venta Ultra Veloz</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Escaneo continuo de códigos de barra sin necesidad de usar el mouse. Cobro rápido con teclado (F12) y cálculo de vuelto automático.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Fiados y Cuenta Corriente -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e7f5ec] border border-[#c3e6cf] text-[#166534] flex items-center justify-center mb-4">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#166534] mb-1">MÓDULO: FIADOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Cuenta Corriente de Clientes</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Basta de libretas de almacén que se pierden. Anota compras fiadas por cliente, registra entregas parciales y controla el saldo deudor al instante.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Caja Ciega y Turnos -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] border border-[#bae6fd] text-[#0369a1] flex items-center justify-center mb-4">
+              <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#0369a1] mb-1">MÓDULO: CAJA Y TURNOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Arqueos & Control de Turnos</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Apertura y cierre por empleado. Arqueo ciego discriminando efectivo, transferencias, tarjetas y QR (Mercado Pago). Retiros e ingresos de cambio.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Facturación ARCA / AFIP -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#fef3c7] border border-[#fde68a] text-[#b45309] flex items-center justify-center mb-4">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#b45309] mb-1">MÓDULO: FACTURACIÓN</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Comprobantes ARCA / AFIP</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Emisión de Facturas Electrónicas oficiales A, B, C con código QR reglamentario, o tickets de venta no fiscal para control interno.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Compras y Proveedores -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#f3ede2] border border-[#dcd3c3] text-[#57534e] flex items-center justify-center mb-4">
+              <i data-lucide="truck" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#57534e] mb-1">MÓDULO: COMPRAS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Proveedores & Reposición</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Carga tus facturas de compra a mayoristas. Actualiza costos de reposición y stock automáticamente para mantener tu margen de ganancia al día.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. Promociones y Combos -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] border border-[#fbcfe8] text-[#be185d] flex items-center justify-center mb-4">
+              <i data-lucide="tag" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#be185d] mb-1">MÓDULO: PROMOS & COMBOS</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Combos Automáticos</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Crea ofertas tipo 2x1, descuentos por cantidad o combos (ej. Gaseosa + Papas) que el sistema aplica solo en la cuenta al escanear los artículos.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7. Inventario y Excel -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] border border-[#bae6fd] text-[#0369a1] flex items-center justify-center mb-4">
+              <i data-lucide="package" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#0369a1] mb-1">MÓDULO: INVENTARIO</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Stock & Importación Excel</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Subí listas de precios masivas desde Excel en segundos. Avisos visuales de stock bajo para que nunca te falten los productos que más vendés.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8. Ticketera & Gaveta -->
+        <div class="card-matte p-5 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e7f5ec] border border-[#c3e6cf] text-[#166534] flex items-center justify-center mb-4">
+              <i data-lucide="printer" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-mono font-bold text-[#166534] mb-1">MÓDULO: HARDWARE</div>
+            <h3 class="font-display font-bold text-base text-[#1c1917] mb-2">Térmica & Gaveta Automática</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed">
+              Compatible con ticketeras térmicas de 58mm y 80mm sin cartuchos. Dispara el pulso de apertura de la gaveta metálica automáticamente al cobrar.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLANES Y COMBOS (Digital, Starter, Pro, Full) -->
+  <section id="planes" class="py-20 bg-[#f4eee2] border-b border-[#e8e2d5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+        <span class="badge-warm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+          Planes Claros & Transparentes
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1917] tracking-tight">
+          Elige el combo ideal para tu mostrador
+        </h2>
+        <p class="text-[#57534e] text-sm sm:text-base">
+          Todos incluyen <strong>licencia de por vida (pago único)</strong> y <strong>14 días de prueba inicial sin costo</strong>.
+        </p>
+      </div>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         
-        <!-- COMBO 1: SOFTWARE SOLO -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between border border-white/[0.08] relative">
+        <!-- PLAN 1: DIGITAL (Software Solo) -->
+        <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded-md bg-white/[0.06] text-slate-300 font-bold text-xs uppercase tracking-wider font-mono">
-                Solo Software
+              <span class="badge-warm px-2.5 py-1 rounded-md font-mono font-bold text-xs uppercase">
+                Plan Digital
               </span>
-              <i data-lucide="laptop" class="w-5 h-5 text-slate-400"></i>
+              <i data-lucide="laptop" class="w-5 h-5 text-[#78716c]"></i>
             </div>
             
-            <h3 class="font-display text-xl font-extrabold text-white mb-1">Software Solo</h3>
-            <p class="text-xs text-slate-400 mb-6">Si ya tienes tu propia computadora, impresora térmica y lector de barras.</p>
+            <h3 class="font-display text-xl font-extrabold text-[#1c1917] mb-1">Software Solo</h3>
+            <p class="text-xs text-[#78716c] mb-6">Si ya tienes tu propia computadora, ticketera y lector de barras.</p>
             
-            <div class="mb-6 p-4 rounded-xl bg-black/40 border border-white/[0.06]">
-              <span class="text-[11px] text-slate-400 block font-medium">Modalidad:</span>
-              <div class="font-display text-2xl font-black text-white mt-0.5">Licencia de Por Vida</div>
-              <span class="text-[11px] text-rose-400 font-semibold block mt-1">✓ Incluye 14 días de prueba gratis</span>
+            <div class="mb-6 p-4 rounded-xl bg-[#faf8f5] border border-[#e8e2d5]">
+              <span class="text-[11px] text-[#78716c] font-medium block">Licencia de Software:</span>
+              <div class="font-display text-2xl font-black text-[#1c1917] mt-0.5">De Por Vida</div>
+              <span class="text-[11px] text-[#166534] font-semibold block mt-1">✓ Incluye 14 días de prueba gratis</span>
             </div>
 
-            <ul class="space-y-3 text-xs text-slate-300 mb-6">
+            <ul class="space-y-3 text-xs text-[#57534e] mb-6">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span>Licencia definitiva <strong>Scroll Market</strong></span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Sin pagos mensuales obligatorios</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Sin mensualidades ni abonos forzosos</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Punto de venta y control de stock ilimitado</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Ventas (POS), caja, fiados y stock</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Arqueos de caja y discriminación de pagos</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Facturación electrónica ARCA / AFIP</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Instalación remota asistida</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Instalación remota guiada</span>
               </li>
             </ul>
           </div>
 
-          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20el%20Plan%201:%20Solo%20Software%20(Licencia%20de%20Por%20Vida%20con%2014%20d%C3%ADas%20de%20prueba)%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-white font-bold text-center text-xs transition-colors flex items-center justify-center gap-2">
+          <a href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20el%20Plan%20Digital:%20Software%20Solo%20de%20por%20vida%20con%2014%20d%C3%ADas%20de%20prueba" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl btn-matte-secondary font-bold text-center text-xs flex items-center justify-center gap-1.5">
             <span>Pedir Solo Software</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
 
-        <!-- COMBO 2: SOFT + IMPRESORA + LECTOR BÁSICO (DESTACADO) -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between border-2 border-rose-500/70 relative shadow-xl shadow-rose-950/40 bg-gradient-to-b from-rose-950/20 to-transparent">
+        <!-- PLAN 2: STARTER (Soft + Impresora + Lector) -->
+        <div class="card-matte p-6 flex flex-col justify-between bg-white border-2 border-[#be185d] relative shadow-md">
           
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gradient-to-r from-rose-600 to-pink-600 text-white text-[10px] font-extrabold tracking-wider uppercase shadow-md">
-            Combo Más Elegido
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#be185d] text-white text-[10px] font-extrabold uppercase tracking-wider">
+            Más Elegido
           </div>
 
           <div>
             <div class="flex items-center justify-between mb-4 mt-1">
-              <span class="px-2.5 py-1 rounded-md bg-rose-500/20 text-rose-300 font-bold text-xs uppercase tracking-wider font-mono">
-                Kit Esencial
+              <span class="badge-rose px-2.5 py-1 rounded-md font-mono font-bold text-xs uppercase">
+                Combo Starter
               </span>
-              <i data-lucide="printer" class="w-5 h-5 text-rose-400"></i>
+              <i data-lucide="printer" class="w-5 h-5 text-[#be185d]"></i>
             </div>
             
-            <h3 class="font-display text-xl font-extrabold text-white mb-1">Soft + Impresora + Lector</h3>
-            <p class="text-xs text-slate-400 mb-6">Equipamiento clave: software de por vida + ticketera térmica + lector de mano USB.</p>
+            <h3 class="font-display text-xl font-extrabold text-[#1c1917] mb-1">Soft + Imp. + Lector</h3>
+            <p class="text-xs text-[#78716c] mb-6">El kit base esencial: automatiza tu mostrador con ticketera y lector con pie.</p>
             
-            <div class="mb-6 p-4 rounded-xl bg-black/50 border border-rose-500/30">
-              <span class="text-[11px] text-slate-400 block font-medium">Equipamiento + Soft:</span>
-              <div class="font-display text-2xl font-black text-rose-400 mt-0.5">Kit Mostrador</div>
-              <span class="text-[11px] text-slate-300 font-semibold block mt-1">✓ Software de por vida incluido</span>
+            <div class="mb-6 p-4 rounded-xl bg-[#fdf2f4] border border-[#fbcfe8]">
+              <span class="text-[11px] text-[#78716c] font-medium block">Kit de Hardware + Soft:</span>
+              <div class="font-display text-2xl font-black text-[#be185d] mt-0.5">Kit Mostrador</div>
+              <span class="text-[11px] text-[#44403c] font-semibold block mt-1">✓ Software de por vida incluido</span>
             </div>
 
-            <ul class="space-y-3 text-xs text-slate-300 mb-6">
+            <ul class="space-y-3 text-xs text-[#57534e] mb-6">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Software Scroll Market</strong> (Licencia de por vida)</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Impresora Térmica 58mm u 80mm</strong> (sin tinta)</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span><strong>Lector de Códigos de Barras</strong> de mano con pie</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span><strong>Lector de Códigos de Barras</strong> USB con soporte de pie</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Rollos térmicos de regalo + drivers instalados</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Rollos térmicos de regalo + drivers listos</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span>Garantía en hardware y soporte de inicio</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span>Garantía oficial y soporte inicial</span>
               </li>
             </ul>
           </div>
 
-          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20cotizar%20el%20Combo%202:%20Software%20de%20por%20vida%20+%20Impresora%20+%20Lector%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-center text-xs shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2">
-            <span>Cotizar Combo Esencial</span>
+          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20cotizar%20el%20Combo%20Starter:%20Software%20+%20Impresora%20+%20Lector" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl btn-matte-rose font-bold text-center text-xs flex items-center justify-center gap-1.5 shadow-sm">
+            <span>Cotizar Combo Starter</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
 
-        <!-- COMBO 3: SOFT + IMPRESORA + LECTOR DE MESA / MOVIL O LOS DOS -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between border border-white/[0.08] relative group">
+        <!-- PLAN 3: PRO (Soft + Impresora + Lectores Mesa / Móvil / Ambos) -->
+        <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded-md bg-sky-500/20 text-sky-300 font-bold text-xs uppercase tracking-wider font-mono">
-                Alto Rendimiento
+              <span class="badge-sky px-2.5 py-1 rounded-md font-mono font-bold text-xs uppercase">
+                Combo Pro
               </span>
-              <i data-lucide="scan-barcode" class="w-5 h-5 text-sky-400"></i>
+              <i data-lucide="scan-barcode" class="w-5 h-5 text-[#0369a1]"></i>
             </div>
             
-            <h3 class="font-display text-xl font-extrabold text-white mb-1">Soft + Imp. + Lectores Pro</h3>
-            <p class="text-xs text-slate-400 mb-6">Velocidad extrema en caja: lector omnidireccional de mesa, inalámbrico móvil o <strong>los dos</strong>.</p>
+            <h3 class="font-display text-xl font-extrabold text-[#1c1917] mb-1">Soft + Imp. + Lectores Pro</h3>
+            <p class="text-xs text-[#78716c] mb-6">Velocidad extrema: lector de mesa omnidireccional 360°, lector móvil o <strong>los dos</strong>.</p>
             
-            <div class="mb-6 p-4 rounded-xl bg-black/40 border border-white/[0.06]">
-              <span class="text-[11px] text-slate-400 block font-medium">Configuración de Lectores:</span>
-              <div class="font-display text-xl font-black text-sky-400 mt-0.5">Mesa / Móvil / Ambos</div>
-              <span class="text-[11px] text-slate-300 font-semibold block mt-1">✓ Software de por vida incluido</span>
+            <div class="mb-6 p-4 rounded-xl bg-[#f0f9ff] border border-[#bae6fd]">
+              <span class="text-[11px] text-[#78716c] font-medium block">Configuración de Lectores:</span>
+              <div class="font-display text-xl font-black text-[#0369a1] mt-0.5">Mesa / Móvil / Ambos</div>
+              <span class="text-[11px] text-[#44403c] font-semibold block mt-1">✓ Software de por vida incluido</span>
             </div>
 
-            <ul class="space-y-3 text-xs text-slate-300 mb-6">
+            <ul class="space-y-3 text-xs text-[#57534e] mb-6">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Software Scroll Market</strong> (Licencia de por vida)</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span><strong>Impresora Térmica 80mm</strong> c/ auto-corte de ticket</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span><strong>Impresora Térmica 80mm</strong> c/ corte automático</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                <span><strong>Lector de Mesa Omnidireccional 360°</strong> (manos libres)</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#0369a1] shrink-0 mt-0.5"></i>
+                <span><strong>Lector de Mesa 360°</strong> (manos libres para colas)</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                <span><strong>O Lector Inalámbrico/Móvil</strong> de largo alcance</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#0369a1] shrink-0 mt-0.5"></i>
+                <span><strong>O Lector Inalámbrico</strong> móvil de largo alcance</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
-                <span><strong>Opción Ambos Lectores:</strong> Mesa fija + Móvil simultáneos</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#be185d] shrink-0 mt-0.5"></i>
+                <span><strong>Opción Ambos Lectores:</strong> Mesa fija + Móvil a la vez</span>
               </li>
             </ul>
           </div>
 
-          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20el%20Combo%20con%20Lector%20de%20Mesa%20y/o%20M%C3%B3vil%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-white/[0.06] hover:bg-sky-600 text-white font-bold text-center text-xs transition-colors flex items-center justify-center gap-2">
+          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20el%20Combo%20Pro%20con%20Lector%20de%20Mesa%20o%20M%C3%B3vil" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl btn-matte-secondary font-bold text-center text-xs flex items-center justify-center gap-1.5">
             <span>Elegir Lectores Pro</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
 
-        <!-- COMBO 4: ENTERO INCLUYENDO LA COMPU -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between border border-white/[0.08] relative">
+        <!-- PLAN 4: FULL (Con Computadora Completa) -->
+        <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 font-bold text-xs uppercase tracking-wider font-mono">
-                Llave en Mano
+              <span class="badge-sage px-2.5 py-1 rounded-md font-mono font-bold text-xs uppercase">
+                Combo Full
               </span>
-              <i data-lucide="monitor" class="w-5 h-5 text-purple-400"></i>
+              <i data-lucide="monitor" class="w-5 h-5 text-[#166534]"></i>
             </div>
             
-            <h3 class="font-display text-xl font-extrabold text-white mb-1">Combo Total c/ Compu</h3>
-            <p class="text-xs text-slate-400 mb-6">Puesto de venta completo: computadora con SSD, monitor, software de por vida, impresora, lector y gaveta.</p>
+            <h3 class="font-display text-xl font-extrabold text-[#1c1917] mb-1">Combo Total c/ Compu</h3>
+            <p class="text-xs text-[#78716c] mb-6">Puesto de venta llave en mano: Computadora con SSD, monitor, software, impresora, lector y gaveta.</p>
             
-            <div class="mb-6 p-4 rounded-xl bg-black/40 border border-white/[0.06]">
-              <span class="text-[11px] text-slate-400 block font-medium">Listo para Facturar:</span>
-              <div class="font-display text-xl font-black text-purple-400 mt-0.5">100% Configurado</div>
-              <span class="text-[11px] text-slate-300 font-semibold block mt-1">✓ Llegar, enchufar y vender</span>
+            <div class="mb-6 p-4 rounded-xl bg-[#e7f5ec] border border-[#c3e6cf]">
+              <span class="text-[11px] text-[#78716c] font-medium block">Puesto Integral:</span>
+              <div class="font-display text-xl font-black text-[#166534] mt-0.5">Listo p/ Facturar</div>
+              <span class="text-[11px] text-[#44403c] font-semibold block mt-1">✓ Llegar, enchufar y vender</span>
             </div>
 
-            <ul class="space-y-3 text-xs text-slate-300 mb-6">
+            <ul class="space-y-3 text-xs text-[#57534e] mb-6">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Computadora / All In One</strong> nueva con SSD alta velocidad</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span><strong>Monitor HD</strong> + Teclado y Mouse ergonómicos</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span><strong>Monitor HD</strong> + Teclado y Mouse</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Software Scroll Market</strong> (Licencia de por vida activa)</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <span><strong>Impresora Térmica + Lector de Barras</strong> (a tu gusto)</span>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
+                <span><strong>Impresora Térmica + Lector de Barras</strong></span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <span><strong>Gaveta de dinero metálica</strong> con apertura automática</span>
               </li>
             </ul>
           </div>
 
-          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20cotizar%20el%20Combo%20Total%20con%20Computadora%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-center text-xs shadow-lg shadow-purple-600/30 transition-all flex items-center justify-center gap-2">
+          <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20cotizar%20el%20Combo%20Full%20incluyendo%20Computadora%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl btn-matte-primary font-bold text-center text-xs flex items-center justify-center gap-1.5">
             <span>Pedir Combo Completo</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
@@ -649,19 +654,19 @@
     </div>
   </section>
 
-  <!-- Cotizador Interactivo Dinámico -->
-  <section id="cotizador" class="py-20 bg-[#08090d] relative overflow-hidden">
+  <!-- COTIZADOR PERSONALIZADO INTERACTIVO -->
+  <section id="cotizador" class="py-20 border-b border-[#e8e2d5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full badge-pill-cyan text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Cotizador Personalizado
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-2">
+        <span class="badge-sky px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
+          <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Arma tu combo a tu medida
         </span>
-        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Arma tu Configuración a Medida
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917] tracking-tight">
+          Cotizador Interactivo
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Tilda exactamente el equipamiento que necesitas. Nuestro cotizador armará tu propuesta y la enviará directo a nuestro WhatsApp comercial.
+        <p class="text-[#57534e] text-sm sm:text-base">
+          Elige qué necesitas y envía tu configuración en un clic a nuestro WhatsApp comercial.
         </p>
       </div>
 
@@ -670,45 +675,45 @@
         <!-- Opciones (8 columnas) -->
         <div class="lg:col-span-8 space-y-6">
           
-          <!-- PASO 1: Licencia de Software -->
-          <div class="card-glass rounded-2xl p-6">
+          <!-- PASO 1: Software -->
+          <div class="card-matte p-6 bg-white">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="font-display text-base font-bold text-white flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs flex items-center justify-center font-bold">1</span>
+              <h3 class="font-display text-base font-bold text-[#1c1917] flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1c1917] text-white text-xs flex items-center justify-center font-bold">1</span>
                 Licencia de Software Scroll Market
               </h3>
-              <span class="text-xs text-rose-400 font-semibold font-mono">14 días de prueba gratis</span>
+              <span class="text-xs text-[#be185d] font-bold font-mono">14 días de prueba gratis</span>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-3" id="softwareOptions">
-              <label class="config-option selected p-4 flex flex-col justify-between" data-group="software" data-value="definitiva" data-name="Software Scroll Market: Licencia de Por Vida (Pago Único) + 14 días de prueba gratis">
+              <label class="config-option selected p-4 flex flex-col justify-between" data-group="software" data-value="definitiva" data-name="Software Scroll Market: Licencia de Por Vida (Pago Único) + 14 días de prueba">
                 <input type="radio" name="soft_plan" value="definitiva" checked class="hidden">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-display font-bold text-sm text-white">Licencia de Por Vida (Recomendada)</span>
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Licencia de Por Vida (Recomendada)</span>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#be185d] check-indicator"></i>
                 </div>
-                <p class="text-xs text-slate-400">Un solo pago. Sin abonos mensuales obligatorios. Incluye 14 días de prueba inicial sin costo.</p>
+                <p class="text-xs text-[#78716c]">Un solo pago. Sin mensualidades forzadas. Incluye 14 días de prueba gratis en tu local.</p>
               </label>
 
-              <label class="config-option p-4 flex flex-col justify-between" data-group="software" data-value="mensual" data-name="Software Scroll Market: Suscripción Mensual c/ Soporte Continuo + 14 días de prueba gratis">
+              <label class="config-option p-4 flex flex-col justify-between" data-group="software" data-value="mensual" data-name="Software Scroll Market: Suscripción Mensual c/ Soporte Continuo + 14 días de prueba">
                 <input type="radio" name="soft_plan" value="mensual" class="hidden">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-display font-bold text-sm text-white">Abono Mensual Flexible</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Abono Mensual Flexible</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <p class="text-xs text-slate-400">Modalidad mensual con soporte prioritario continuo y copias en la nube.</p>
+                <p class="text-xs text-[#78716c]">Modalidad mensual con soporte prioritario continuo y copias en la nube.</p>
               </label>
             </div>
           </div>
 
           <!-- PASO 2: Impresora Térmica -->
-          <div class="card-glass rounded-2xl p-6">
+          <div class="card-matte p-6 bg-white">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="font-display text-base font-bold text-white flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs flex items-center justify-center font-bold">2</span>
+              <h3 class="font-display text-base font-bold text-[#1c1917] flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1c1917] text-white text-xs flex items-center justify-center font-bold">2</span>
                 Impresora Térmica para Tickets y Facturas
               </h3>
-              <span class="text-xs text-slate-400 font-mono">Sin cartuchos de tinta</span>
+              <span class="text-xs text-[#78716c] font-mono">Sin cartuchos de tinta</span>
             </div>
 
             <div class="grid sm:grid-cols-3 gap-3" id="printerOptions">
@@ -716,103 +721,99 @@
               <label class="config-option selected p-4 flex flex-col justify-between" data-group="printer" data-value="80mm" data-name="Impresora Térmica 80mm c/ Corte Automático">
                 <input type="radio" name="printer_choice" value="80mm" checked class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">Térmica 80mm Pro</span>
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">Térmica 80mm Pro</span>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#be185d] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-rose-300 font-bold mb-1">Corte automático</span>
-                <p class="text-[11px] text-slate-400">Ticket ancho, ideal facturación con QR y alto flujo de clientes.</p>
+                <span class="text-[10px] text-[#be185d] font-bold mb-1">Corte automático</span>
+                <p class="text-[11px] text-[#78716c]">Ticket ancho, ideal facturación con QR y alto flujo de personas.</p>
               </label>
 
               <label class="config-option p-4 flex flex-col justify-between" data-group="printer" data-value="58mm" data-name="Impresora Térmica Compacta 58mm">
                 <input type="radio" name="printer_choice" value="58mm" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">Térmica 58mm</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">Térmica 58mm</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-slate-400 font-medium mb-1">Corte manual sierra</span>
-                <p class="text-[11px] text-slate-400">Tamaño compacto y bajo costo de papel. Excelente para kioscos.</p>
+                <span class="text-[10px] text-[#78716c] font-medium mb-1">Corte manual sierra</span>
+                <p class="text-[11px] text-[#78716c]">Tamaño compacto, bajo costo de papel. Excelente para kioscos.</p>
               </label>
 
               <label class="config-option p-4 flex flex-col justify-between" data-group="printer" data-value="none" data-name="Sin Impresora (Ya tengo mi ticketera)">
                 <input type="radio" name="printer_choice" value="none" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">Ya tengo impresora</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">Ya tengo impresora</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-slate-500 font-medium mb-1">Sin costo</span>
-                <p class="text-[11px] text-slate-400">Enlazamos Scroll Market a tu impresora actual.</p>
+                <span class="text-[10px] text-[#a8a29e] font-medium mb-1">Sin costo</span>
+                <p class="text-[11px] text-[#78716c]">Enlazamos Scroll Market a tu impresora actual.</p>
               </label>
 
             </div>
           </div>
 
-          <!-- PASO 3: Lector de Barras (Detalle de mesa, movible o los dos) -->
-          <div class="card-glass rounded-2xl p-6">
+          <!-- PASO 3: Lector de Barras -->
+          <div class="card-matte p-6 bg-white">
             <div class="flex items-center justify-between mb-2">
-              <h3 class="font-display text-base font-bold text-white flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs flex items-center justify-center font-bold">3</span>
+              <h3 class="font-display text-base font-bold text-[#1c1917] flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1c1917] text-white text-xs flex items-center justify-center font-bold">3</span>
                 Lector de Códigos de Barras y QR
               </h3>
-              <span class="text-xs text-sky-400 font-bold font-mono">Personalizable</span>
+              <span class="text-xs text-[#0369a1] font-bold font-mono">Personalizable</span>
             </div>
-            <p class="text-xs text-slate-400 mb-4">Elige entre lector de mano tradicional, de mesa omnidireccional 360°, inalámbrico móvil o <strong>los dos</strong>:</p>
+            <p class="text-xs text-[#78716c] mb-4">Elige entre lector de mano tradicional, de mesa omnidireccional 360°, inalámbrico móvil o <strong>los dos</strong>:</p>
 
             <div class="grid sm:grid-cols-2 gap-3" id="scannerOptions">
               
-              <!-- Opción 1: Lector Mano USB -->
               <label class="config-option p-4 flex flex-col justify-between" data-group="scanner" data-value="mano_usb" data-name="Lector de Mano USB con Soporte de Pie">
                 <input type="radio" name="scanner_choice" value="mano_usb" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-sm text-white">Lector de Mano USB c/ Pie</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Lector de Mano USB c/ Pie</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <p class="text-xs text-slate-400">Disparo automático al pasar el producto o por gatillo ergonómico.</p>
+                <p class="text-xs text-[#78716c]">Disparo automático al acercar el producto o con gatillo ergonómico.</p>
               </label>
 
-              <!-- Opción 2: Lector de Mesa Omnidireccional -->
               <label class="config-option selected p-4 flex flex-col justify-between" data-group="scanner" data-value="mesa" data-name="Lector de Mesa Fijo Omnidireccional 2D (Escaneo 360°)">
                 <input type="radio" name="scanner_choice" value="mesa" checked class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-sm text-white">Lector de Mesa (Omnidireccional)</span>
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Lector de Mesa (Omnidireccional)</span>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#be185d] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-sky-400 font-bold mb-1">Manos libres / Máxima velocidad</span>
-                <p class="text-xs text-slate-400">Pasa el producto en cualquier ángulo y cobra al instante sin apuntar.</p>
+                <span class="text-[10px] text-[#0369a1] font-bold mb-1">Manos libres / Máxima velocidad</span>
+                <p class="text-xs text-[#78716c]">Pasa el producto en cualquier ángulo y cobra al instante sin apuntar.</p>
               </label>
 
-              <!-- Opción 3: Lector Movible Inalámbrico -->
               <label class="config-option p-4 flex flex-col justify-between" data-group="scanner" data-value="movible" data-name="Lector Móvil Inalámbrico Bluetooth / 2.4Ghz">
                 <input type="radio" name="scanner_choice" value="movible" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-sm text-white">Lector Móvil Inalámbrico</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Lector Móvil Inalámbrico</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-emerald-400 font-bold mb-1">Alcance hasta 50 metros</span>
-                <p class="text-xs text-slate-400">Ideal para escanear cajas pesadas en el chango o inventariar estanterías.</p>
+                <span class="text-[10px] text-[#166534] font-bold mb-1">Alcance hasta 50 metros</span>
+                <p class="text-xs text-[#78716c]">Ideal para escanear cajas pesadas en el chango o inventariar estanterías.</p>
               </label>
 
-              <!-- Opción 4: Los Dos -->
               <label class="config-option p-4 flex flex-col justify-between" data-group="scanner" data-value="ambos" data-name="Combo Doble: Lector de Mesa Omnidireccional + Lector Móvil Inalámbrico">
                 <input type="radio" name="scanner_choice" value="ambos" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-sm text-white">Combo Doble Lector (Mesa + Móvil)</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-sm text-[#1c1917]">Combo Doble Lector (Mesa + Móvil)</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-purple-400 font-bold mb-1">Configuración Pro Definitiva</span>
-                <p class="text-xs text-slate-400">Mesa fija para productos cotidianos y móvil inalámbrico para bultos pesados.</p>
+                <span class="text-[10px] text-[#be185d] font-bold mb-1">Configuración Pro Definitiva</span>
+                <p class="text-xs text-[#78716c]">Mesa fija para productos cotidianos y móvil inalámbrico para bultos pesados.</p>
               </label>
 
             </div>
           </div>
 
           <!-- PASO 4: Computadora -->
-          <div class="card-glass rounded-2xl p-6">
+          <div class="card-matte p-6 bg-white">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="font-display text-base font-bold text-white flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs flex items-center justify-center font-bold">4</span>
+              <h3 class="font-display text-base font-bold text-[#1c1917] flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1c1917] text-white text-xs flex items-center justify-center font-bold">4</span>
                 Equipo de Computación (PC)
               </h3>
-              <span class="text-xs text-purple-400 font-bold font-mono">100% Configurado</span>
+              <span class="text-xs text-[#166534] font-bold font-mono">100% Configurado</span>
             </div>
 
             <div class="grid sm:grid-cols-3 gap-3" id="pcOptions">
@@ -820,39 +821,39 @@
               <label class="config-option selected p-4 flex flex-col justify-between" data-group="pc" data-value="none" data-name="Sin PC (Uso mi propia Computadora o Notebook)">
                 <input type="radio" name="pc_choice" value="none" checked class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">Uso mi propia PC</span>
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">Uso mi propia PC</span>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#be185d] check-indicator"></i>
                 </div>
-                <p class="text-[11px] text-slate-400">Instalamos Scroll Market en tu computadora actual vía remota.</p>
+                <p class="text-[11px] text-[#78716c]">Instalamos Scroll Market en tu equipo de forma remota.</p>
               </label>
 
               <label class="config-option p-4 flex flex-col justify-between" data-group="pc" data-value="allinone" data-name="Computadora All-In-One con Pantalla LED, SSD y Windows">
                 <input type="radio" name="pc_choice" value="allinone" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">Computadora All In One</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">Computadora All In One</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-sky-400 font-bold mb-1">Todo integrado en pantalla</span>
-                <p class="text-[11px] text-slate-400">Estética moderna, ahorra espacio y no deja cables sueltos en mostrador.</p>
+                <span class="text-[10px] text-[#0369a1] font-bold mb-1">Todo integrado en pantalla</span>
+                <p class="text-[11px] text-[#78716c]">Estética moderna, ahorra espacio y no deja cables sueltos.</p>
               </label>
 
               <label class="config-option p-4 flex flex-col justify-between" data-group="pc" data-value="cpumonitor" data-name="Kit CPU Ultrarrápida + Monitor + Teclado y Mouse">
                 <input type="radio" name="pc_choice" value="cpumonitor" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="font-display font-bold text-xs text-white">CPU + Monitor + Teclado</span>
-                  <i data-lucide="circle" class="w-4 h-4 text-slate-600 check-indicator"></i>
+                  <span class="font-display font-bold text-xs text-[#1c1917]">CPU + Monitor + Teclado</span>
+                  <i data-lucide="circle" class="w-4 h-4 text-[#a8a29e] check-indicator"></i>
                 </div>
-                <span class="text-[10px] text-slate-400 font-bold mb-1">Gabinete robusto de alta durabilidad</span>
-                <p class="text-[11px] text-slate-400">Equipo potente pensado para resistir el uso comercial diario continuo.</p>
+                <span class="text-[10px] text-[#57534e] font-bold mb-1">Gabinete robusto de alta durabilidad</span>
+                <p class="text-[11px] text-[#78716c]">Equipo potente pensado para resistir el uso diario continuo.</p>
               </label>
 
             </div>
           </div>
 
-          <!-- PASO 5: Accesorios Adicionales -->
-          <div class="card-glass rounded-2xl p-6">
-            <h3 class="font-display text-base font-bold text-white flex items-center gap-2 mb-4">
-              <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs flex items-center justify-center font-bold">5</span>
+          <!-- PASO 5: Accesorios -->
+          <div class="card-matte p-6 bg-white">
+            <h3 class="font-display text-base font-bold text-[#1c1917] flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-[#1c1917] text-white text-xs flex items-center justify-center font-bold">5</span>
               Accesorios Adicionales Opcionales
             </h3>
 
@@ -860,28 +861,28 @@
               
               <label class="config-option p-3.5 flex items-center justify-between checkbox-option" data-addon="gaveta" data-name="Gaveta de Dinero Metálica con Apertura Automática">
                 <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                  <div class="w-8 h-8 rounded-lg bg-[#e7f5ec] text-[#166534] flex items-center justify-center">
                     <i data-lucide="lock" class="w-4 h-4"></i>
                   </div>
                   <div>
-                    <span class="font-display font-bold text-xs text-white block">Gaveta de Dinero Electrónica</span>
-                    <span class="text-[11px] text-slate-400">Se abre sola al emitir el ticket de cobro</span>
+                    <span class="font-display font-bold text-xs text-[#1c1917] block">Gaveta de Dinero Electrónica</span>
+                    <span class="text-[11px] text-[#78716c]">Se abre sola al emitir el ticket de cobro</span>
                   </div>
                 </div>
-                <input type="checkbox" class="w-4 h-4 accent-rose-500 rounded cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 accent-[#be185d] rounded cursor-pointer">
               </label>
 
               <label class="config-option p-3.5 flex items-center justify-between checkbox-option" data-addon="balanza" data-name="Módulo de Conexión para Balanza Electrónica">
                 <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                  <div class="w-8 h-8 rounded-lg bg-[#e0f2fe] text-[#0369a1] flex items-center justify-center">
                     <i data-lucide="scale" class="w-4 h-4"></i>
                   </div>
                   <div>
-                    <span class="font-display font-bold text-xs text-white block">Conexión a Balanza Digital</span>
-                    <span class="text-[11px] text-slate-400">Pesaje directo en caja de frutas, fiambre o granel</span>
+                    <span class="font-display font-bold text-xs text-[#1c1917] block">Conexión a Balanza Digital</span>
+                    <span class="text-[11px] text-[#78716c]">Pesaje directo en caja de frutas, fiambre o granel</span>
                   </div>
                 </div>
-                <input type="checkbox" class="w-4 h-4 accent-rose-500 rounded cursor-pointer">
+                <input type="checkbox" class="w-4 h-4 accent-[#be185d] rounded cursor-pointer">
               </label>
 
             </div>
@@ -889,87 +890,87 @@
 
         </div>
 
-        <!-- Resumen Dinámico en Tiempo Real (4 columnas) -->
+        <!-- Resumen Dinámico (4 columnas) -->
         <div class="lg:col-span-4 sticky top-24 space-y-4">
           
-          <div class="card-glass rounded-2xl p-6 border-2 border-rose-500/40 shadow-2xl relative">
+          <div class="card-matte p-6 bg-white border-2 border-[#d8d0c0] shadow-md">
             
-            <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-4">
+            <div class="flex items-center justify-between pb-4 border-b border-[#e8e2d5] mb-4">
               <div>
-                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono font-bold block">Resumen de Cotización</span>
-                <h4 class="font-display text-lg font-black text-white">Scroll Market a Medida</h4>
+                <span class="text-[10px] uppercase tracking-wider text-[#78716c] font-mono font-bold block">Resumen del Combo</span>
+                <h4 class="font-display text-lg font-black text-[#1c1917]">Scroll Market a Medida</h4>
               </div>
-              <div class="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
-                <i data-lucide="check-check" class="w-5 h-5"></i>
+              <div class="w-9 h-9 rounded-xl bg-[#e7f5ec] text-[#166534] flex items-center justify-center">
+                <i data-lucide="check" class="w-5 h-5"></i>
               </div>
             </div>
 
             <div class="space-y-3.5 mb-6 text-xs">
               <div class="flex items-start gap-2.5">
-                <i data-lucide="infinity" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="infinity" class="w-4 h-4 text-[#be185d] shrink-0 mt-0.5"></i>
                 <div class="flex-1">
-                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Software POS</span>
-                  <span class="text-white font-medium" id="sumSoft">Licencia de Por Vida + 14 días gratis</span>
+                  <span class="text-[#78716c] block text-[10px] uppercase font-mono">Software POS</span>
+                  <span class="text-[#1c1917] font-semibold" id="sumSoft">Licencia de Por Vida + 14 días gratis</span>
                 </div>
               </div>
 
               <div class="flex items-start gap-2.5">
-                <i data-lucide="printer" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="printer" class="w-4 h-4 text-[#0369a1] shrink-0 mt-0.5"></i>
                 <div class="flex-1">
-                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Impresora Térmica</span>
-                  <span class="text-white font-medium" id="sumPrinter">Térmica 80mm c/ Corte Automático</span>
+                  <span class="text-[#78716c] block text-[10px] uppercase font-mono">Impresora Térmica</span>
+                  <span class="text-[#1c1917] font-semibold" id="sumPrinter">Térmica 80mm c/ Corte Automático</span>
                 </div>
               </div>
 
               <div class="flex items-start gap-2.5">
-                <i data-lucide="scan-barcode" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="scan-barcode" class="w-4 h-4 text-[#57534e] shrink-0 mt-0.5"></i>
                 <div class="flex-1">
-                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Lector de Barras</span>
-                  <span class="text-white font-medium" id="sumScanner">Lector de Mesa (Omnidireccional 360°)</span>
+                  <span class="text-[#78716c] block text-[10px] uppercase font-mono">Lector de Barras</span>
+                  <span class="text-[#1c1917] font-semibold" id="sumScanner">Lector de Mesa (Omnidireccional 360°)</span>
                 </div>
               </div>
 
               <div class="flex items-start gap-2.5">
-                <i data-lucide="monitor" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="monitor" class="w-4 h-4 text-[#78716c] shrink-0 mt-0.5"></i>
                 <div class="flex-1">
-                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Computación</span>
-                  <span class="text-white font-medium" id="sumPC">Uso mi propia PC (Instalación remota)</span>
+                  <span class="text-[#78716c] block text-[10px] uppercase font-mono">Computación</span>
+                  <span class="text-[#1c1917] font-semibold" id="sumPC">Uso mi propia PC (Instalación remota)</span>
                 </div>
               </div>
 
-              <div id="sumAddonsContainer" class="hidden flex items-start gap-2.5 border-t border-white/[0.08] pt-3">
-                <i data-lucide="plus-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <div id="sumAddonsContainer" class="hidden flex items-start gap-2.5 border-t border-[#e8e2d5] pt-3">
+                <i data-lucide="plus-circle" class="w-4 h-4 text-[#166534] shrink-0 mt-0.5"></i>
                 <div class="flex-1">
-                  <span class="text-slate-400 block text-[10px] uppercase font-mono">Adicionales</span>
-                  <span class="text-emerald-300 font-medium" id="sumAddons">-</span>
+                  <span class="text-[#78716c] block text-[10px] uppercase font-mono">Adicionales</span>
+                  <span class="text-[#166534] font-semibold" id="sumAddons">-</span>
                 </div>
               </div>
             </div>
 
-            <!-- Guarantee Badges -->
-            <div class="p-3 rounded-xl bg-black/40 border border-white/[0.06] text-[11px] text-slate-300 space-y-1.5 mb-6">
+            <!-- Badges -->
+            <div class="p-3 rounded-xl bg-[#faf8f5] border border-[#e8e2d5] text-[11px] text-[#57534e] space-y-1.5 mb-6">
               <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-rose-400"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
                 <span><strong>14 días de prueba gratis</strong> incluidos</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="award" class="w-3.5 h-3.5 text-sky-400"></i>
-                <span>Garantía oficial y soporte en hardware</span>
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#0369a1]"></i>
+                <span>Garantía oficial y soporte técnico directo</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-400"></i>
-                <span>Envíos a todo el país / Instalación remota</span>
+                <i data-lucide="truck" class="w-3.5 h-3.5 text-[#78716c]"></i>
+                <span>Envíos a todo el país</span>
               </div>
             </div>
 
-            <!-- WhatsApp Direct Action Button -->
-            <button id="sendQuoteBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-sm shadow-xl shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 group">
-              <i data-lucide="message-circle" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+            <!-- WhatsApp Action Button: Matte Forest -->
+            <button id="sendQuoteBtn" class="w-full py-4 rounded-xl btn-matte-forest font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
               <span>Consultar este Combo por WhatsApp</span>
             </button>
 
-            <p class="text-center text-[10px] text-slate-400 mt-3">
-              Un asesor comercial te contestará de inmediato con stock y formas de pago.
+            <p class="text-center text-[10px] text-[#78716c] mt-3">
+              Un asesor comercial te responderá con precios finales y formas de pago.
             </p>
 
           </div>
@@ -981,118 +982,117 @@
     </div>
   </section>
 
-  <!-- Comparativa de Lectores de Código de Barras -->
-  <section id="hardware" class="py-20 bg-[#0a0d14] border-t border-white/[0.06]">
+  <!-- Hardware: Comparativa de Lectores -->
+  <section id="hardware" class="py-20 bg-[#f4eee2] border-b border-[#e8e2d5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-sky-400 font-mono">Guía de Equipamiento</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          ¿Qué lector de código de barras conviene en tu mostrador?
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+        <span class="badge-warm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+          Guía Técnica de Lectores
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917] tracking-tight">
+          ¿Mesa, Móvil o los Dos?
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Te asesoramos para elegir la opción que más agilice tus ventas y evite colas en las horas pico.
+        <p class="text-[#57534e] text-sm sm:text-base">
+          Te ayudamos a elegir la mejor opción según la dinámica de tu local.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         
-        <!-- Lector de Mesa Omnidireccional -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between">
+        <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
-              <i data-lucide="scan-barcode" class="w-6 h-6"></i>
+            <div class="w-10 h-10 rounded-xl bg-[#e0f2fe] text-[#0369a1] flex items-center justify-center mb-4">
+              <i data-lucide="scan-barcode" class="w-5 h-5"></i>
             </div>
-            <span class="badge-pill-cyan px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-mono">
+            <span class="badge-sky px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
               Lector de Mesa (Fijo 360°)
             </span>
-            <h3 class="font-display text-xl font-bold text-white mt-2 mb-2">Manos Libres Omnidireccional</h3>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Manos Libres Omnidireccional</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed mb-4">
               El cajero toma el producto con las dos manos y lo pasa por el visor. Lee al instante en cualquier ángulo, incluso códigos arrugados o desde pantallas de celular.
             </p>
-            <ul class="space-y-2 text-xs text-slate-300">
+            <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i>
-                <span>Máxima velocidad en supermercados y minimarkets</span>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <span>Máxima velocidad en supermercados y almacenes</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
                 <span>Soporta códigos 1D (EAN13) y 2D (QR)</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
                 <span>Cero fatiga en la muñeca del cajero</span>
               </li>
             </ul>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs text-slate-400">
-            <strong>Ideal para:</strong> Comercios de más de 80 tickets por día.
+          <div class="mt-6 pt-4 border-t border-[#e8e2d5] text-xs text-[#78716c]">
+            <strong>Ideal para:</strong> Más de 80 tickets al día.
           </div>
         </div>
 
-        <!-- Lector Móvil Inalámbrico -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between">
+        <div class="card-matte p-6 flex flex-col justify-between bg-white">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
-              <i data-lucide="wifi" class="w-6 h-6"></i>
+            <div class="w-10 h-10 rounded-xl bg-[#fdf2f4] text-[#be185d] flex items-center justify-center mb-4">
+              <i data-lucide="wifi" class="w-5 h-5"></i>
             </div>
-            <span class="badge-pill-rose px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-mono">
+            <span class="badge-rose px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
               Lector Móvil Inalámbrico
             </span>
-            <h3 class="font-display text-xl font-bold text-white mt-2 mb-2">Libertad Total de Movimiento</h3>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Libertad Total de Movimiento</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed mb-4">
               Conexión Bluetooth / 2.4Ghz de largo alcance con batería de alta duración. Te trasladas hacia el carrito del cliente para cobrar productos pesados sin levantarlos.
             </p>
-            <ul class="space-y-2 text-xs text-slate-300">
+            <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
                 <span>Alcance de hasta 30-50 metros sin cables</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
-                <span>Modo inventario p/ escanear en depósito</span>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <span>Modo inventario para escanear en depósito</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
                 <span>Batería recargable para toda la jornada</span>
               </li>
             </ul>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs text-slate-400">
-            <strong>Ideal para:</strong> Bultos pesados, corralones, ferreterías y depósitos.
+          <div class="mt-6 pt-4 border-t border-[#e8e2d5] text-xs text-[#78716c]">
+            <strong>Ideal para:</strong> Ferreterías, depósitos y bultos grandes.
           </div>
         </div>
 
-        <!-- Los Dos Lectores -->
-        <div class="card-glass rounded-2xl p-6 flex flex-col justify-between border-2 border-purple-500/50 bg-gradient-to-b from-purple-950/20 to-transparent">
+        <div class="card-matte p-6 flex flex-col justify-between bg-white border-2 border-[#1c1917]">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
-              <i data-lucide="layers" class="w-6 h-6"></i>
+            <div class="w-10 h-10 rounded-xl bg-[#f4eee2] text-[#1c1917] flex items-center justify-center mb-4">
+              <i data-lucide="layers" class="w-5 h-5"></i>
             </div>
-            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30">
-              Configuración Profesional
+            <span class="badge-warm px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono">
+              Configuración Completa
             </span>
-            <h3 class="font-display text-xl font-bold text-white mt-2 mb-2">Los Dos Lectores a la Vez</h3>
-            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-              La solución más cómoda y eficiente del mercado: ambos lectores conectados en paralelo en el mismo software Scroll Market.
+            <h3 class="font-display text-xl font-bold text-[#1c1917] mt-2 mb-2">Los Dos Lectores a la Vez</h3>
+            <p class="text-xs text-[#57534e] leading-relaxed mb-4">
+              La solución más cómoda: ambos lectores conectados en paralelo en el mismo software Scroll Market sin pisarse.
             </p>
-            <ul class="space-y-2 text-xs text-slate-300">
+            <ul class="space-y-2 text-xs text-[#57534e]">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                <span>Lector de mesa fijo para artículos chicos</span>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <span>Lector de mesa para artículos cotidianos</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                <span>Lector móvil para escanear cajas en el suelo o chango</span>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <span>Lector móvil para escanear cajas pesadas</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                <span>Cero cuellos de botella en horas de alta demanda</span>
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#166534]"></i>
+                <span>Cero cuellos de botella en horas pico</span>
               </li>
             </ul>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs text-purple-300 font-semibold">
-            ¡Disponible en el cotizador con descuento especial!
+          <div class="mt-6 pt-4 border-t border-[#e8e2d5] text-xs text-[#be185d] font-bold">
+            ¡Disponible en el cotizador con precio especial!
           </div>
         </div>
 
@@ -1101,54 +1101,56 @@
     </div>
   </section>
 
-  <!-- FAQ Section Accordion -->
-  <section id="faq" class="py-20 bg-[#08090d]">
+  <!-- Preguntas Frecuentes (FAQ) -->
+  <section id="faq" class="py-20 border-b border-[#e8e2d5]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-rose-400 font-mono">Preguntas Frecuentes</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Todo lo que necesitas saber</h2>
+      <div class="text-center mb-14 space-y-2">
+        <span class="badge-warm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
+          Dudas Comunes
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917]">Preguntas Frecuentes</h2>
       </div>
 
-      <div class="space-y-4" id="faqAccordion">
+      <div class="space-y-3" id="faqAccordion">
         
-        <div class="card-glass rounded-xl overflow-hidden faq-item">
-          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 hover:text-rose-400 transition-colors faq-trigger">
+        <div class="card-matte overflow-hidden faq-item bg-white">
+          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-[#1c1917] flex items-center justify-between gap-4 hover:text-[#be185d] transition-colors faq-trigger">
             <span>¿Cómo funcionan los 14 días de prueba gratis?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#78716c] shrink-0 transition-transform duration-200"></i>
           </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-slate-400 hidden faq-content leading-relaxed">
-            Te instalamos el software Scroll Market en tu computadora de forma remota para que lo uses con ventas reales durante 14 días completos, sin tarjeta de crédito ni compromiso de compra. Si te gusta y te sirve, activas la licencia definitiva de por vida.
+          <div class="px-5 pb-5 text-xs sm:text-sm text-[#57534e] hidden faq-content leading-relaxed">
+            Te instalamos el software Scroll Market en tu computadora de forma remota para que lo uses con tus ventas reales durante 14 días completos, sin tarjeta de crédito ni compromiso. Si te gusta y te sirve, activas la licencia definitiva de por vida.
           </div>
         </div>
 
-        <div class="card-glass rounded-xl overflow-hidden faq-item">
-          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 hover:text-rose-400 transition-colors faq-trigger">
+        <div class="card-matte overflow-hidden faq-item bg-white">
+          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-[#1c1917] flex items-center justify-between gap-4 hover:text-[#be185d] transition-colors faq-trigger">
             <span>¿La licencia es de verdad de por vida o cobran después?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#78716c] shrink-0 transition-transform duration-200"></i>
           </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-slate-400 hidden faq-content leading-relaxed">
-            Es <strong>licencia de por vida (pago único)</strong>. Una vez adquirida, el software es de tu propiedad para ese puesto de venta, sin abonos mensuales forzados ni sorpresas en el precio a fin de mes.
+          <div class="px-5 pb-5 text-xs sm:text-sm text-[#57534e] hidden faq-content leading-relaxed">
+            Es <strong>licencia de por vida (pago único)</strong>. Una vez adquirida, el software es de tu propiedad para ese puesto de venta, sin abonos mensuales forzados ni aumentos a fin de mes.
           </div>
         </div>
 
-        <div class="card-glass rounded-xl overflow-hidden faq-item">
-          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 hover:text-rose-400 transition-colors faq-trigger">
-            <span>¿Puedo comprar solo el software si ya tengo mis equipos?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+        <div class="card-matte overflow-hidden faq-item bg-white">
+          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-[#1c1917] flex items-center justify-between gap-4 hover:text-[#be185d] transition-colors faq-trigger">
+            <span>¿Puedo adquirir solo el software si ya tengo mis propios equipos?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#78716c] shrink-0 transition-transform duration-200"></i>
           </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-slate-400 hidden faq-content leading-relaxed">
-            Sí. Nuestro <strong>Plan 1 (Software Solo)</strong> está pensado exactamente para eso. Se conecta con cualquier impresora térmica (58mm u 80mm) y cualquier lector de código de barras USB o inalámbrico que tengas.
+          <div class="px-5 pb-5 text-xs sm:text-sm text-[#57534e] hidden faq-content leading-relaxed">
+            Sí. Nuestro <strong>Plan Digital (Software Solo)</strong> está pensado para eso. Es compatible con cualquier impresora térmica (58mm u 80mm) y cualquier lector USB o inalámbrico que ya tengas en tu local.
           </div>
         </div>
 
-        <div class="card-glass rounded-xl overflow-hidden faq-item">
-          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 hover:text-rose-400 transition-colors faq-trigger">
-            <span>¿Hacen envíos de los combos de hardware?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200"></i>
+        <div class="card-matte overflow-hidden faq-item bg-white">
+          <button class="w-full p-5 text-left font-display font-bold text-sm sm:text-base text-[#1c1917] flex items-center justify-between gap-4 hover:text-[#be185d] transition-colors faq-trigger">
+            <span>¿Qué pasa si se corta la conexión a internet en mi comercio?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-[#78716c] shrink-0 transition-transform duration-200"></i>
           </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-slate-400 hidden faq-content leading-relaxed">
-            Sí, despachamos el equipamiento a todo el país. Todos los equipos viajan probados, con cables, fuentes de alimentación y garantía oficial. Al recibirlos, un técnico te asiste en la conexión en solo minutos.
+          <div class="px-5 pb-5 text-xs sm:text-sm text-[#57534e] hidden faq-content leading-relaxed">
+            Scroll Market funciona sobre una base de datos local rápida y segura. Puedes seguir cobrando, abriendo la caja y emitiendo tickets sin interrupciones. Tu local nunca se detiene.
           </div>
         </div>
 
@@ -1158,29 +1160,29 @@
   </section>
 
   <!-- Final CTA Banner -->
-  <section class="py-20 relative overflow-hidden bg-gradient-to-b from-[#08090d] via-rose-950/20 to-[#08090d] border-t border-white/[0.06]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+  <section class="py-16 bg-[#f4eee2]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
       
-      <div class="w-16 h-16 rounded-2xl bg-white p-2 mx-auto shadow-xl shadow-rose-950/50 flex items-center justify-center">
+      <div class="w-14 h-14 rounded-2xl bg-white border border-[#dfd8cc] p-1.5 mx-auto shadow-sm flex items-center justify-center">
         <img src="logo.png" alt="Scroll Market Logo" class="w-full h-full object-contain">
       </div>
 
-      <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight">
-        Moderniza tu comercio hoy mismo
+      <h2 class="font-display text-3xl sm:text-4xl font-black text-[#1c1917] tracking-tight">
+        Moderniza tu local comercial hoy mismo
       </h2>
       
-      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
-        Comienza tus <strong>14 días de prueba gratis</strong> o solicita cotización para tu combo de hardware con despacho inmediato.
+      <p class="text-sm sm:text-base text-[#57534e] max-w-xl mx-auto">
+        Comienza tus <strong>14 días de prueba gratis</strong> o solicita cotización para tu combo de hardware con despacho a todo el país.
       </p>
 
-      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-        <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20comenzar%20mi%20prueba%20gratis%20de%2014%20d%C3%ADas%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-sm shadow-xl shadow-rose-600/30 transition-all flex items-center justify-center gap-2.5">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20solicitar%20mis%2014%20d%C3%ADas%20de%20prueba%20gratis%20de%20Scroll%20Market" target="_blank" rel="noopener noreferrer" class="btn-matte-forest px-8 py-3.5 rounded-xl font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>Pedir 14 Días Gratis por WhatsApp</span>
         </a>
         
-        <a href="#cotizador" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2">
-          <i data-lucide="sliders" class="w-4 h-4 text-sky-400"></i>
+        <a href="#cotizador" class="btn-matte-secondary px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+          <i data-lucide="sliders" class="w-4 h-4 text-[#57534e]"></i>
           <span>Armar Combo a Medida</span>
         </a>
       </div>
@@ -1189,40 +1191,40 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#050608] border-t border-white/[0.06] py-12 text-slate-500 text-xs">
+  <footer class="bg-white border-t border-[#e8e2d5] py-12 text-[#78716c] text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-white p-1 flex items-center justify-center shadow">
+        <div class="w-9 h-9 rounded-lg bg-white border border-[#e8e2d5] p-1 flex items-center justify-center shadow-sm">
           <img src="logo.png" alt="Scroll Market Logo" class="w-full h-full object-contain">
         </div>
         <div>
-          <span class="font-display font-extrabold text-white text-sm">Scroll Market</span>
-          <p class="text-[11px] text-slate-400">Software Punto de Venta & Equipamiento para Retail</p>
+          <span class="font-display font-extrabold text-[#1c1917] text-sm">Scroll Market</span>
+          <p class="text-[11px] text-[#78716c]">Software Punto de Venta & Equipamiento para Retail</p>
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-        <a href="#beneficios" class="hover:text-slate-300 transition-colors">Sistema POS</a>
-        <a href="#planes" class="hover:text-slate-300 transition-colors">Combos</a>
-        <a href="#cotizador" class="hover:text-slate-300 transition-colors">Cotizador</a>
-        <a href="#faq" class="hover:text-slate-300 transition-colors">Preguntas</a>
-        <a href="mailto:agustinpereyraer@gmail.com" class="hover:text-rose-400 text-slate-400 transition-colors flex items-center gap-1.5">
+      <div class="flex flex-wrap items-center gap-5">
+        <a href="#demo" class="hover:text-[#1c1917] transition-colors">Demo Online</a>
+        <a href="#funciones" class="hover:text-[#1c1917] transition-colors">Funciones Reales</a>
+        <a href="#planes" class="hover:text-[#1c1917] transition-colors">Combos</a>
+        <a href="#cotizador" class="hover:text-[#1c1917] transition-colors">Cotizador</a>
+        <a href="mailto:agustinpereyraer@gmail.com" class="hover:text-[#be185d] text-[#57534e] transition-colors flex items-center gap-1.5 font-medium">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
           <span>agustinpereyraer@gmail.com</span>
         </a>
       </div>
 
       <div>
-        <p>&copy; 2026 Scroll Market. Licencia de por vida.</p>
+        <p>&copy; 2026 Scroll Market. Licencia de por vida • Titular: Ignacio</p>
       </div>
 
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Scroll%20Market" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl shadow-emerald-500/50 flex items-center justify-center transition-all transform hover:scale-110">
-    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  <!-- WhatsApp Floating Button: Matte Forest -->
+  <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Scroll%20Market" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full btn-matte-forest shadow-lg flex items-center justify-center transition-all transform hover:scale-105">
+    <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
   </a>
 
   <!-- Interactive JavaScript logic -->

@@ -6,7 +6,7 @@
 // Configuration object - Central place to customize contact data
 const CONFIG = {
   // Replace with the owner's WhatsApp number (country code + number without plus or spaces)
-  whatsappNumber: "5491100000000",
+  whatsappNumber: "5492995238355",
   defaultCurrencySymbol: "$",
 };
 
@@ -54,10 +54,12 @@ function initConfigurator() {
   const sumPC = document.getElementById("sumPC");
   const sumAddons = document.getElementById("sumAddons");
   const sumAddonsContainer = document.getElementById("sumAddonsContainer");
+  const sumEstimate = document.getElementById("sumEstimate");
+  const estimateNote = document.getElementById("estimateNote");
 
-  // State object matching "Licencia de Por Vida con 14 días de prueba gratis"
+  // State object matching "Licencia de Por Vida con 5 días de prueba gratis"
   const state = {
-    software: "Software Scroll Market: Licencia de Por Vida (Pago Único) + 14 días de prueba",
+    software: "Software Scroll Market: Licencia de Por Vida + 5 días de prueba",
     printer: "Impresora Térmica 80mm c/ Corte Automático",
     scanner: "Lector de Mesa Fijo Omnidireccional 2D (Escaneo 360°)",
     pc: "Sin PC (Uso mi propia Computadora o Notebook)",
@@ -147,24 +149,73 @@ function initConfigurator() {
         sumAddons.textContent = "-";
       }
     }
+
+    const estimate = getPriceEstimate();
+    if (sumEstimate) sumEstimate.textContent = estimate.amount;
+    if (estimateNote) estimateNote.textContent = estimate.detail;
+  }
+
+  function getPriceEstimate() {
+    const softwareChoice = document.querySelector('input[name="soft_plan"]:checked')?.value;
+    const printerChoice = document.querySelector('input[name="printer_choice"]:checked')?.value;
+    const scannerChoice = document.querySelector('input[name="scanner_choice"]:checked')?.value;
+    const pcChoice = document.querySelector('input[name="pc_choice"]:checked')?.value;
+    const hasAddons = state.addons.length > 0;
+
+    if (
+      softwareChoice === "definitiva" &&
+      printerChoice === "none" &&
+      scannerChoice === "none" &&
+      pcChoice === "none" &&
+      !hasAddons
+    ) {
+      return {
+        amount: "$90.000",
+        detail: "Disponible en cuotas; consultá opciones. Ya tenés PC, impresora y lector.",
+      };
+    }
+
+    if (
+      softwareChoice === "definitiva" &&
+      ["80mm", "58mm"].includes(printerChoice) &&
+      ["mano_usb", "mesa", "movible"].includes(scannerChoice) &&
+      pcChoice === "none" &&
+      !hasAddons
+    ) {
+      return {
+        amount: "$250.000 a $300.000",
+        detail: "Rango del Combo Starter; varía según la impresora y el lector. Disponible en cuotas.",
+      };
+    }
+
+    return {
+      amount: "A cotizar",
+      detail: "Consultá el precio final y las opciones de pago en cuotas por WhatsApp.",
+    };
   }
 
   // Generate WhatsApp text when clicking button
   if (sendQuoteBtn) {
     sendQuoteBtn.addEventListener("click", () => {
-      let message = `¡Hola Scroll Market! 🛒 Acabo de configurar mi combo en la web y deseo activar mi prueba gratis de 14 días y consultar cotización:%0A%0A`;
-      message += `📌 *Software:* ${state.software}%0A`;
-      message += `🖨️ *Impresora:* ${state.printer}%0A`;
-      message += `📟 *Lector:* ${state.scanner}%0A`;
-      message += `💻 *Equipo PC:* ${state.pc}%0A`;
+      const estimate = getPriceEstimate();
+      const messageParts = [
+        "¡Hola Scroll Market! 🛒 Configuré mi combo en la web y quiero consultar por la prueba gratis de 5 días:",
+        "",
+        `📌 *Software:* ${state.software}`,
+        `🖨️ *Impresora:* ${state.printer}`,
+        `📟 *Lector:* ${state.scanner}`,
+        `💻 *Equipo PC:* ${state.pc}`,
+        `💰 *Precio estimado:* ${estimate.amount}`,
+        estimate.detail,
+      ];
 
       if (state.addons.length > 0) {
-        message += `➕ *Adicionales:* ${state.addons.join(" + ")}%0A`;
+        messageParts.push(`➕ *Adicionales:* ${state.addons.join(" + ")}`);
       }
 
-      message += `%0A¿Podrían brindarme el presupuesto, tiempos de entrega y cómo activamos los 14 días de prueba? ¡Muchas gracias!`;
+      messageParts.push("", "¿Podrían confirmarme el presupuesto, el envío estimado de 3 a 7 días y cómo activar la prueba? También quisiera consultar por los medios de pago (tarjeta o Mercado Pago) y personalizar el software y el combo para mi local. ¡Gracias!");
 
-      const finalUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${message}`;
+      const finalUrl = `https://wa.me/${CONFIG.whatsappNumber}?${new URLSearchParams({ text: messageParts.join("\n") })}`;
       window.open(finalUrl, "_blank");
     });
   }
@@ -204,8 +255,10 @@ function initFAQAccordion() {
  * Update all WhatsApp URLs with the configured phone number
  */
 function initWhatsAppButton() {
-  const allWhatsAppLinks = document.querySelectorAll('a[href*="wa.me/5491100000000"]');
+  const allWhatsAppLinks = document.querySelectorAll('a[href*="wa.me/"]');
   allWhatsAppLinks.forEach((a) => {
-    a.href = a.href.replace("5491100000000", CONFIG.whatsappNumber);
+    const whatsappUrl = new URL(a.href);
+    whatsappUrl.pathname = `/${CONFIG.whatsappNumber}`;
+    a.href = whatsappUrl.toString();
   });
 }

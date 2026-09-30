@@ -40,7 +40,7 @@ Landing Page de alta conversión diseñada y desarrollada para la venta del soft
    - Elección, entrega/instalación, carga de artículos y puesta en marcha.
 
 9. **Preguntas Frecuentes (FAQ):**
-   - Respuestas a objeciones comunes (compatibilidad, funcionamiento sin internet, soporte técnico).
+   - Respuestas a objeciones comunes (compatibilidad, soporte técnico y conectividad).
 
 10. **Llamado a la Acción Final & Botón Flotante de WhatsApp:**
     - Botón flotante accesible en todo momento para atención instantánea.
@@ -53,7 +53,7 @@ Landing Page de alta conversión diseñada y desarrollada para la venta del soft
 Abre el archivo [app.js](file:///c:/Users/PC/OneDrive/Imágenes/ANDREA/landing%20market/app.js#L7-L12) y modifica la línea:
 ```javascript
 const CONFIG = {
-  whatsappNumber: "5491100000000", // Reemplaza con tu código de país y número sin '+' ni espacios
+   whatsappNumber: "5492995238355", // Código de país y número sin '+' ni espacios
   defaultCurrencySymbol: "$",
 };
 ```
